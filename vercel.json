@@ -1,12 +1,7 @@
 {
-  "projects": [
-    {
-      "src": "web/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "web/dist",
-        "buildCommand": "yarn rw build"
-      }
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
     }
-  ]
+  }
 }

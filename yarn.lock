@@ -17410,6 +17410,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
+    "@babel/core": "npm:7.25.7"
     "@redwoodjs/forms": "npm:8.4.0"
     "@redwoodjs/router": "npm:8.4.0"
     "@redwoodjs/vite": "npm:8.4.0"
@@ -17419,6 +17420,7 @@ __metadata:
     autoprefixer: "npm:^10.4.19"
     postcss: "npm:^8.4.38"
     postcss-loader: "npm:^8.1.1"
+    prettier: "npm:^3.3.3"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     tailwindcss: "npm:^3.4.3"
