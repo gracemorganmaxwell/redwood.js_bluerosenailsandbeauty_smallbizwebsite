@@ -7,9 +7,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('prettier-plugin-tailwindcss'),
-    require('tailwindcss/nesting'),
-    require('tailwindcss')(path.resolve(__dirname, 'tailwind.config.js')),
+    require('tailwindcss'),
     require('autoprefixer'),
+    require('prettier-plugin-tailwindcss'),
   ],
 }
