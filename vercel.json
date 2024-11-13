@@ -1,7 +1,26 @@
 {
-  "build": {
-    "env": {
-      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/src/functions/**/*",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "web/dist"
+      }
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/src/functions/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/web/dist/index.html"
+    }
+  ]
 }
