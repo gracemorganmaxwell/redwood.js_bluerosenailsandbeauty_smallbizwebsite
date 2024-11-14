@@ -3,19 +3,14 @@
   "builds": [
     {
       "src": "api/src/functions/**/*",
-      "use": "@vercel/node",
-      "env": {
-      "ENABLE_EXPERIMENTAL_COREPACK": "1"
-    }
+      "use": "@vercel/node"
     },
     {
       "src": "web/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "web/dist"
-      },"env": {
-      "ENABLE_EXPERIMENTAL_COREPACK": "1"
-    }
+      }
     }
   ],
   "routes": [
