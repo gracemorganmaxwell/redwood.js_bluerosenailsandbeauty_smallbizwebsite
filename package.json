@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.25.7",
+    "@redwoodjs/cli-data-migrate": "8.4.0",
     "@redwoodjs/core": "8.4.0",
     "@redwoodjs/project-config": "8.4.0",
     "prettier": "^3.3.3",
