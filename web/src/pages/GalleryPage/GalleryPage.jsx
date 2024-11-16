@@ -1,19 +1,12 @@
-// import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
+
+import GalleryGridComponent from 'src/components/GalleryGridComponent/GalleryGridComponent'
 
 const GalleryPage = () => {
   return (
     <>
       <Metadata title="Gallery" description="Gallery page" />
-
-      <h1>GalleryPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/GalleryPage/GalleryPage.jsx</code>
-      </p>
-      {/*
-           My default route is named `gallery`, link to me with:
-           `<Link to={routes.gallery()}>Gallery</Link>`
-        */}
+      <GalleryGridComponent />
     </>
   )
 }

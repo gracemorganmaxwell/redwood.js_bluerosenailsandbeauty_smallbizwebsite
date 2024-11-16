@@ -4,7 +4,7 @@ import { Link } from '@redwoodjs/router'
 
 import HamburgerBtn from 'src/components/HamburgerBtn/HamburgerBtn'
 
-import CtaButton from 'src/components/CtaBtn/CtaBtn'
+import CtaButton from '../CtaBtn/CtaBtn'
 
 const NavigationComponent = () => {
   return (
@@ -37,7 +37,7 @@ const NavigationComponent = () => {
             Gallery
           </Link>
           <Link
-            to="/contact"
+            to="/contactform"
             className="rounded-[12px] border border-darkBlue px-3 py-3 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
           >
             Contact
