@@ -11,7 +11,7 @@ const NavigationComponent = () => {
     <nav className="sticky top-0 z-50 bg-white p-4 shadow-xl">
       <div className="flex w-full items-center justify-between">
         <div className="order-2 flex">
-          <Link to="/home">
+          <Link to="/">
             <img
               src={logo}
               alt="Blue Rose Nails and Beauty Business Logo and link to home page"

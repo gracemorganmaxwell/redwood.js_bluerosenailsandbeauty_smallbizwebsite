@@ -222,7 +222,7 @@ const GalleryRow = () => {
                   <AdvancedVideo
                     cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)}
                     controls
-                    autoplay
+                    autoPlay
                     muted
                     plugins={[responsive(), placeholder()]}
                     className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"

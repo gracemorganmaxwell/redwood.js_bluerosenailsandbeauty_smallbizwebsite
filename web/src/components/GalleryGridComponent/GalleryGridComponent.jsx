@@ -257,7 +257,7 @@ const GalleryGridComponent = () => {
                   ) : (
                     <AdvancedVideo
                       cldVid={cld.video(media.publicId)}
-                      autoplay
+                      autoPlay
                       muted
                       controls
                       plugins={[lazyload(), responsive(), placeholder()]}
@@ -299,7 +299,7 @@ const GalleryGridComponent = () => {
                   ) : (
                     <AdvancedVideo
                       cldVid={cld.video(media.publicId)}
-                      autoplay
+                      autoPlay
                       muted
                       controls
                       plugins={[lazyload(), responsive(), placeholder()]}

@@ -43,7 +43,7 @@ const Lightbox = ({
               <AdvancedVideo
                 cldVid={cld.video(currentMedia.publicId)}
                 controls
-                autoplay
+                autoPlay
                 muted
                 plugins={[]}
                 className="h-auto w-full max-w-lg rounded-lg object-cover"
