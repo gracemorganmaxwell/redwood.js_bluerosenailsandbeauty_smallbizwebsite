@@ -36,7 +36,6 @@ const HomePage = () => {
             <TreatmentRow />
             <CtaRow />
             <TestimoniesRow />
-            <Footer />
         </div>
       )}
     </div>
