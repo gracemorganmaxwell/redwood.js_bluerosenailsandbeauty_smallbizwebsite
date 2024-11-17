@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react';
-// Removed CSSTransition as it is not used in this component
 
 const Lightbox = ({
   mediaItems,

@@ -6,16 +6,7 @@ import ContactFormComponent from 'src/components/ContactFormComponent/ContactFor
 import LoadingScreen from 'src/components/LoadingSpinner/LoadingSpinner'
 
 const ContactPage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Simulating a loading delay for demonstration
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-
-    return () => clearTimeout(timer) // Cleanup the timer
-  }, [])
+  const [isLoading] = useState(true)
 
   return (
     <main>
