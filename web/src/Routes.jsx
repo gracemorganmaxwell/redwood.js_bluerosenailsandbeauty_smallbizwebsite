@@ -14,7 +14,7 @@ const Routes = () => {
   return (
     <Router>
       <Route path="/loading" page={LoadingPage} name="loading" />
-      <Set wrap={BaseLayout} prerender>
+      <Set wrap={BaseLayout}>
         <Route path="/treatments" page={TreatmentPage} name="treatments" />
         <Route path="/unisex-waxing-fresha-link" page={UnisexWaxingFreshaLinkPage} name="unisexWaxingFreshaLink" />
         <Route path="/nails-fresha-link" page={NailsFreshaLinkPage} name="nailsFreshaLink" />
