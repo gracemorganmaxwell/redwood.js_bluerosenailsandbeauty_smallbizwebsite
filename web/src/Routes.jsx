@@ -13,7 +13,8 @@ import BaseLayout from './layouts/BaseLayout/BaseLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={BaseLayout}>
+      <Route path="/loading" page={LoadingPage} name="loading" />
+      <Set wrap={BaseLayout} prerender>
         <Route path="/treatments" page={TreatmentPage} name="treatments" />
         <Route path="/unisex-waxing-fresha-link" page={UnisexWaxingFreshaLinkPage} name="unisexWaxingFreshaLink" />
         <Route path="/nails-fresha-link" page={NailsFreshaLinkPage} name="nailsFreshaLink" />

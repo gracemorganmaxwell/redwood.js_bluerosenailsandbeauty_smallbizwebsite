@@ -6,7 +6,7 @@ import ContactFormComponent from 'src/components/ContactFormComponent/ContactFor
 import LoadingScreen from 'src/components/LoadingSpinner/LoadingSpinner'
 
 const ContactPage = () => {
-  const [isLoading] = useState(true)
+  const [isLoading] = useState(false)
 
   return (
     <main>
