@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import clientPhoto1 from 'web/public/images/CharlotteReviewer.png'
-import clientPhoto2 from 'web/public/images/HazelReviewer.png'
-import headingAssent from 'web/public/images/headingAssent.svg'
-import clientPhoto3 from 'web/public/images/ReviewerTerri.png'
+import clientPhoto1 from '/images/CharlotteReviewer.png'
+import clientPhoto2 from '/images/HazelReviewer.png'
+import headingAssent from '/images/headingAssent.svg'
+import clientPhoto3 from '/images/ReviewerTerri.png'
 
 import './TestimoniesRow.css'
 

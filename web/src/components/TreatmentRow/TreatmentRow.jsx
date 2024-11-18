@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Brows from 'web/public/images/Brows.png'
-import Consult from 'web/public/images/Consult.png'
-import FootTreatment from 'web/public/images/FootTreatment.png'
-import headingAssent from 'web/public/images/headingAssent.svg'
-import NailsLashesPackages from 'web/public/images/Lash&BrowPackages.png'
-import Massage from 'web/public/images/Massage.png'
-import Nails from 'web/public/images/Nails.png'
-import UnisexWaxing from 'web/public/images/UnisexWaxing.png'
-import Waxing from 'web/public/images/Waxing.png'
+import Brows from '/images/Brows.png'
+import Consult from '/images/Consult.png'
+import FootTreatment from '/images/FootTreatment.png'
+import headingAssent from '/images/headingAssent.svg'
+import NailsLashesPackages from '/images/Lash&BrowPackages.png'
+import Massage from '/images/Massage.png'
+import Nails from '/images/Nails.png'
+import UnisexWaxing from '/images/UnisexWaxing.png'
+import Waxing from '/images/Waxing.png'
 
 import Card from '../Card/Card'
 

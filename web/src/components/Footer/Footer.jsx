@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import emailIcon from 'web/public/images/EmailIcon.svg'
-import facebookIcon from 'web/public/images/facebook.svg'
-import instagramIcon from 'web/public/images/InstagramIcon.png'
+import emailIcon from '/images/EmailIcon.svg'
+import facebookIcon from '/images/facebook.svg'
+import instagramIcon from '/images/InstagramIcon.png'
 
 import LineSeparatorComponent from 'src/components/LineSeparator/LineSeparator'
 

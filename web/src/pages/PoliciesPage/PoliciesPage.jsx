@@ -1,6 +1,6 @@
 import React from 'react'
 
-import favicon from 'web/public/favicon.png'
+import favicon from '/favicon.png'
 
 import HeadingComponent from 'src/components/HeadingComponent/HeadingComponent'
 import SubheadingComponent from 'src/components/SubHeadingComponent/SubHeadingComponent'

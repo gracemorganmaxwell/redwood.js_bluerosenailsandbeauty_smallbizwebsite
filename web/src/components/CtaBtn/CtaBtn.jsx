@@ -1,6 +1,6 @@
 import React from 'react'
 
-import goldAssentBtnCorner from 'web/public/images/goldAssentBtnCorner.svg'
+import goldAssentBtnCorner from '/images/goldAssentBtnCorner.svg'
 
 const CtaButton = () => {
   const handleClick = () => {

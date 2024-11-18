@@ -1,8 +1,8 @@
 import React from 'react'
 
-import aboutImg1 from 'web/public/images/About-Img1.png'
-import aboutImg2 from 'web/public/images/About-Img2.png'
-import aboutImg3 from 'web/public/images/About-Img3.png'
+import aboutImg1 from '/images/About-Img1.png'
+import aboutImg2 from '/images/About-Img2.png'
+import aboutImg3 from '/images/About-Img3.png'
 
 const AboutRow = () => {
   return (

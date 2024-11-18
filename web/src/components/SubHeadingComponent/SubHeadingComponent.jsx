@@ -1,7 +1,7 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
-import headingAssent from 'web/public/images/headingAssent.svg'
+import headingAssent from '/images/headingAssent.svg'
 
 const SubheadingComponent = ({ title }) => {
   return (

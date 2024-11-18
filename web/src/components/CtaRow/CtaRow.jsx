@@ -1,6 +1,6 @@
 import React from 'react'
 
-import leftFlowerAssent from 'web/public/images/leftAssentFlower.svg'
+import leftFlowerAssent from '/images/leftAssentFlower.svg'
 
 import CtaButton from '../CtaBtn/CtaBtn'
 
