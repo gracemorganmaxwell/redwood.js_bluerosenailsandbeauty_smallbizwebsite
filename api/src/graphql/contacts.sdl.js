@@ -20,6 +20,13 @@ export const schema = gql`
     createdAt: DateTime!
   }
 
+  type Subscription {
+    id: Int!
+    name: String!
+    email: String!
+    subscribedAt: DateTime!
+  }
+
   type Query {
     contacts: [Contact!]! @requireAuth(roles: ["admin", "business_owner"])
     contact(id: Int!): Contact @requireAuth(roles: ["admin", "business_owner"])
@@ -33,6 +40,7 @@ export const schema = gql`
     name: String!
     email: String!
     message: String!
+    recaptchaValue: String!
   }
 
   input CreateGiftCardRequestInput {
@@ -63,6 +71,12 @@ export const schema = gql`
     gifterAddress: String
   }
 
+  input CreateSubscriptionInput {
+    name: String!
+    email: String!
+    recaptchaValue: String!
+  }
+
   type Mutation {
     createContact(input: CreateContactInput!): Contact! @skipAuth
     updateContact(id: Int!, input: UpdateContactInput!): Contact!
@@ -78,5 +92,7 @@ export const schema = gql`
     ): GiftCardRequest! @requireAuth(roles: ["admin", "business_owner"])
     deleteGiftCardRequest(id: Int!): GiftCardRequest!
       @requireAuth(roles: ["admin", "business_owner"])
+
+    createSubscription(input: CreateSubscriptionInput!): Subscription! @skipAuth
   }
 `

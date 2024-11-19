@@ -24,8 +24,8 @@ model Contact {
   name            String
   email           String
   message         String
-  recaptcha_value String?
-  created_at      DateTime @default(now())
+  recaptchaValue  String? @map("recaptcha_value")
+  createdAt       DateTime @map("created_at") @default(now())
 }
 
 model GiftCardRequest {
@@ -35,14 +35,15 @@ model GiftCardRequest {
   gift_type       String
   delivery_method String
   address         String
-  gifter_address  String
-  recaptcha_value String?
-  created_at      DateTime @default(now())
+  gifterAddress   String @map("gifter_address")
+  recaptchaValue String? @map("recaptcha_value")
+  createdAt      DateTime @map("created_at") @default(now())
 }
 
 model Subscription {
   id            Int      @id @default(autoincrement())
   name          String?
   email         String   @unique
-  subscribed_at DateTime @default(now())
+  recaptchaValue String? @map("recaptcha_value")
+  subscribedAt  DateTime @map("subscribed_at") @default(now())
 }

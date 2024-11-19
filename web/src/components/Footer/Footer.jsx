@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { gql, useMutation } from '@redwoodjs/web'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import emailIcon from '/images/EmailIcon.svg'
 import facebookIcon from '/images/facebook.svg'
@@ -6,7 +8,25 @@ import instagramIcon from '/images/InstagramIcon.png'
 
 import LineSeparatorComponent from 'src/components/LineSeparator/LineSeparator'
 
+const CREATE_SUBSCRIPTION = gql`
+  mutation CreateSubscriptionMutation($input: CreateSubscriptionInput!) {
+    createSubscription(input: $input) {
+      id
+    }
+  }
+`
+
 const Footer = () => {
+  const [createSubscription, { loading, error }] = useMutation(CREATE_SUBSCRIPTION, {
+    onCompleted: () => {
+      alert('Thank you for subscribing!')
+    },
+    onError: (error) => {
+      console.error(error)
+      alert('There was an error submitting your message.')
+    },
+  })
+  const recaptchaRef = useRef(null)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
@@ -14,22 +34,16 @@ const Footer = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbxDuo51ZgF08cXFe_m58fEBU-NeUlxnGpRUzo4KMdAYiKWJBKplm5Bi5i8qIE7s1MsWMQ/exec',
-        {
-          method: 'POST',
-          body: new FormData(e.target),
-        }
-      )
-
-      if (response.ok) {
-        alert('Thank you for subscribing!')
-        setName('')
-        setEmail('')
-      } else {
-        alert('Oops! Something went wrong. Please try again.')
+      const token = await recaptchaRef.current.executeAsync()
+      if (!token) {
+        alert('reCAPTCHA verification failed. Please try again.')
+        return
       }
+      await createSubscription({
+        variables: { input: { name, email, recaptchaValue: token } }
+      })
     } catch (error) {
+      console.error(error)
       alert('Oops! Something went wrong. Please try again.')
     }
   }
@@ -150,6 +164,14 @@ const Footer = () => {
             </form>
           </div>
         </div>
+
+         <div className="flex justify-center">
+            <ReCAPTCHA
+              sitekey={process.env.REDWOOD_ENV_RECAPTCHA_SITE_KEY}
+              size="invisible"
+              ref={recaptchaRef}
+            />
+          </div>
 
         <LineSeparatorComponent />
 
