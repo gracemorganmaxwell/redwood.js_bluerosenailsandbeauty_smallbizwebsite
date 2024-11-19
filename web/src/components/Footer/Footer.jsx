@@ -22,7 +22,7 @@ const Footer = () => {
       alert('Thank you for subscribing!')
     },
     onError: (error) => {
-      console.error(error)
+      console.error(JSON.stringify(error))
       alert('There was an error submitting your message.')
     },
   })
