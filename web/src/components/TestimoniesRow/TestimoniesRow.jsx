@@ -74,24 +74,6 @@ const TestimoniesRow = () => {
           {/* Testimony Carousel */}
           <div className="testimonies">
             <div className="testimonies-container">
-              <div className="testimony-card">
-                <div className="testimony-quote">
-                  <p className="testimony-subheading">I highly recommend...</p>
-                  <p className="testimony-text">
-                    {testimonies[currentTestimonyIndex].quote}
-                  </p>
-                </div>
-                <div className="testimony-client">
-                  <img
-                    src={testimonies[currentTestimonyIndex].clientPhoto}
-                    alt={testimonies[currentTestimonyIndex].clientName}
-                    className="client-photo"
-                  />
-                  <p className="client-name">
-                    {testimonies[currentTestimonyIndex].clientName}
-                  </p>
-                </div>
-              </div>
               <div className="testimonies-controls">
                 <button
                   className="testimony-control-button"
@@ -128,6 +110,25 @@ const TestimoniesRow = () => {
                   &gt;
                 </button>
               </div>
+              <div className="testimony-card">
+                <div className="testimony-quote">
+                  <p className="testimony-subheading">I highly recommend...</p>
+                  <p className="testimony-text">
+                    {testimonies[currentTestimonyIndex].quote}
+                  </p>
+                </div>
+                <div className="testimony-client">
+                  <img
+                    src={testimonies[currentTestimonyIndex].clientPhoto}
+                    alt={testimonies[currentTestimonyIndex].clientName}
+                    className="client-photo"
+                  />
+                  <p className="client-name">
+                    {testimonies[currentTestimonyIndex].clientName}
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
