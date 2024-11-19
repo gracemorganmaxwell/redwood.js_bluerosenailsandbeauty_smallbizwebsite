@@ -43,7 +43,7 @@ const Footer = () => {
         variables: { input: { name, email, recaptchaValue: token } }
       })
     } catch (error) {
-      console.error(error)
+      console.error(JSON.stringify(error))
       alert('Oops! Something went wrong. Please try again.')
     }
   }
