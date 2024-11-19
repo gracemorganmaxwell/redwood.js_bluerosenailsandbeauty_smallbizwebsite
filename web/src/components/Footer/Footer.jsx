@@ -39,6 +39,9 @@ const Footer = () => {
         alert('reCAPTCHA verification failed. Please try again.')
         return
       }
+
+      console.log(JSON.stringify({ name, email, token }))
+
       await createSubscription({
         variables: { input: { name, email, recaptchaValue: token } }
       })
