@@ -23,11 +23,11 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Gel manicure with coloured french tips.',
     },
-    {
-      publicId: 'Lash_lift_and_hybrid_brow_stain_zf3e33',
-      type: 'video',
-      alt: 'Lash lift and hybrid brow stain.',
-    },
+    // {
+    //   publicId: 'Lash_lift_and_hybrid_brow_stain_zf3e33',
+    //   type: 'video',
+    //   alt: 'Lash lift and hybrid brow stain.',
+    // },
     {
       publicId: 'Soft_gel_extension_with_a_stamp_feature_nail_s46ixx',
       type: 'image',
@@ -123,16 +123,16 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Builder gel natural nail overlay with glitter art.',
     },
-    {
-      publicId: 'Hybrid_brow_stain_and_shape_with_Lash_lift_and_tint_advpra',
-      type: 'video',
-      alt: 'Hybrid brow stain and shape with Lash lift and tint.',
-    },
-    {
-      publicId: 'Brow_lamination_with_hybrid_brow_stain_bonfyf',
-      type: 'video',
-      alt: 'Brow lamination with hybrid brow stain.',
-    },
+    // {
+    //   publicId: 'Hybrid_brow_stain_and_shape_with_Lash_lift_and_tint_advpra',
+    //   type: 'video',
+    //   alt: 'Hybrid brow stain and shape with Lash lift and tint.',
+    // },
+    // {
+    //   publicId: 'Brow_lamination_with_hybrid_brow_stain_bonfyf',
+    //   type: 'video',
+    //   alt: 'Brow lamination with hybrid brow stain.',
+    // },
     {
       publicId: 'Hybrid_brow_stain_cyphij',
       type: 'image',
@@ -211,32 +211,33 @@ const GalleryRow = () => {
                 tabIndex={0}
                 aria-label="Open Lightbox"
               >
-                {galleryMedia[currentMediaIndex].type === 'image' ? (
-                  <AdvancedImage
-                    cldImg={cld.image(galleryMedia[currentMediaIndex].publicId)}
-                    plugins={[responsive(), placeholder()]}
-                    alt={galleryMedia[currentMediaIndex].alt}
-                    className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
-                  />
-                ) : (
-                  <AdvancedVideo
-                    cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)}
-                    controls
-                    autoPlay
-                    muted
-                    plugins={[responsive(), placeholder()]}
-                    className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
-                    aria-label="Video without audio or captions"
-                  >
-                    <track
-                      kind="captions"
-                      src=""
-                      srcLang="en"
-                      label="No captions"
+                  {galleryMedia[currentMediaIndex].type === 'image' ? (
+                    <AdvancedImage
+                      className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
+                      cldImg={cld.image(galleryMedia[currentMediaIndex].publicId)}
+                      plugins={[responsive(), placeholder()]}
+                      alt={galleryMedia[currentMediaIndex].alt}
                     />
-                    Your browser does not support the video tag.
-                  </AdvancedVideo>
-                )}
+                  ) : (
+                    <AdvancedVideo
+                      className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
+                      cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)}
+                      controls
+                      autoPlay
+                      muted
+                      plugins={[responsive(), placeholder()]}
+
+                      aria-label="Video without audio or captions"
+                    >
+                      <track
+                        kind="captions"
+                        src=""
+                        srcLang="en"
+                        label="No captions"
+                      />
+                      Your browser does not support the video tag.
+                    </AdvancedVideo>
+                  )}
               </div>
               <div className="mt-4 text-center font-gfs_didot_regular text-darkBlue sm:text-xl md:text-2xl lg:text-3xl">
                 {galleryMedia[currentMediaIndex].alt}
