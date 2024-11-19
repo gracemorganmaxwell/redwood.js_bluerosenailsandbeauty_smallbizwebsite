@@ -12,9 +12,18 @@ export const subscription = ({ id }) => {
 
 export const createSubscription = ({ input }) => {
   console.log(`API creating subscription: ${JSON.stringify(input)}`);
-  return db.subscription.create({
-    data: input,
-  });
+
+  try
+  {
+    return db.subscription.create({
+      data: input,
+    });
+  }
+  catch (error)
+  {
+    console.error(JSON.stringify(error))
+    throw error
+  }
 };
 
 export const updateSubscription = ({ id, input }) => {
