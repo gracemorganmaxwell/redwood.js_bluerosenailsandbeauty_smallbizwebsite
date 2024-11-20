@@ -17,18 +17,18 @@ const TreatmentRow = () => {
     {
       image: Nails,
       label: 'Nails',
-      href: '/stepping-stone-nails-fresha',
+      href: '/nails-fresha-link',
     },
-    { image: Brows, label: 'Brows', href: '/stepping-stone-brows-fresha' },
+    { image: Brows, label: 'Brows', href: '/brows-fresha-link' },
     {
       image: Waxing,
       label: 'Waxing',
-      href: '/stepping-stone-body-waxing-fresha',
+      href: '/bodywaxing-fresha-link',
     },
     {
       image: Massage,
       label: 'Massage',
-      href: '/stepping-stone-massage-fresha',
+      href: '/massage-fresha-link',
     },
     {
       image: Consult,
@@ -38,17 +38,17 @@ const TreatmentRow = () => {
     {
       image: FootTreatment,
       label: 'Foot Treatments',
-      href: '/stepping-stone-foot-treatments-fresha',
+      href: '/foot-treatment-fresha-link',
     },
     {
       image: UnisexWaxing,
       label: 'Unisex Waxing',
-      href: '/stepping-stone-unisex-waxing-fresha',
+      href: '/unisex-waxing-fresha-link',
     },
     {
       image: NailsLashesPackages,
       label: 'Lash & Brow Packages',
-      href: '/stepping-stone-brow-n-lash-package-fresha',
+      href: '/brow-n-lash-pack-fresha-link',
     },
   ]
 
