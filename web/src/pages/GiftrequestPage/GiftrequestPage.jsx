@@ -49,6 +49,7 @@ const GiftCardRequestComponent = () => {
       variables: {
         input: {
           ...data,
+          monetaryAmount,
           recaptchaValue: token,
         },
       },
