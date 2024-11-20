@@ -14862,6 +14862,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-currency-input-field@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "react-currency-input-field@npm:3.9.0"
+  peerDependencies:
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/c169e91332d60a98c376cce7675da3caeab52c9917e7613653247f0e897444b6d5f543c6d7dcdd8a71974a7eabedaa3c955182df4eaa7a154802aeb79836e7ad
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
@@ -17546,6 +17555,7 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     prettier: "npm:^3.3.3"
     react: "npm:18.3.1"
+    react-currency-input-field: "npm:^3.9.0"
     react-dom: "npm:18.3.1"
     react-google-recaptcha: "npm:^3.1.0"
     tailwindcss: "npm:^3.4.3"

@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Form, FormError, FieldError, Label, TextField, SelectField, TextAreaField } from '@redwoodjs/forms'
 import { gql, useMutation } from '@redwoodjs/web'
+import CurrencyInput from 'react-currency-input-field'
+
 
 import SubmitButton from 'src/components/FormSubmitBtnComponent/FormSubmitBtnComponent'
 import HeadingComponent from 'src/components/HeadingComponent/HeadingComponent'
@@ -18,6 +20,8 @@ const CREATE_GIFT_CARD_REQUEST = gql`
 const GiftCardRequestComponent = () => {
   const [giftType, setGiftType] = useState('')
   const [deliveryMethod, setDeliveryMethod] = useState('')
+  const [serviceType, setServiceType] = useState('')
+  const [monetaryAmount, setMonetaryAmount] = useState('')
 
   const [createGiftCardRequest, { loading, error }] = useMutation(
     CREATE_GIFT_CARD_REQUEST,
@@ -163,6 +167,52 @@ const GiftCardRequestComponent = () => {
             </SelectField>
             <FieldError name="giftType" className="text-red-600" />
           </div>
+
+          {giftType === 'Monetary' && (
+            <div>
+              <Label
+                name="amount"
+                className="block text-left text-gray-700"
+                errorClassName="text-red-600 text-left"
+              >
+                Amount:
+              </Label>
+              <CurrencyInput
+                id="amount-input"
+                name="amount"
+                className="mt-1 w-full rounded border border-gray-300 p-2"
+                onChange={(e) => setMonetaryAmount(e.target.value)}
+                placeholder={"$50"}
+                allowDecimals={false}
+                prefix="$"
+                validation={{ required: true, min: 10, max: 1000 }}
+                errorClassName="border-red-500 text-left w-full rounded border p-2"
+              />
+            </div>
+          )}
+            {giftType === 'Service' && (
+              <div>
+                <Label
+                  name="serviceType"
+                  className="block text-left text-gray-700"
+                  errorClassName="text-red-600 text-left"
+                >
+                Service Type:
+                please specify the service(s) you are requesting from the available <a href="/treatments" className="text-blue-500" target="_blank" rel="noopener noreferrer">treatment options</a>.
+              </Label>
+              <TextField
+                name="serviceType"
+                className="mt-1 w-full rounded border border-gray-300 p-2"
+                value={serviceType}
+                onChange={(e) => setServiceType(e.target.value)}
+                validation={{ required: true }}
+                errorClassName="border-red-500 text-left w-full rounded border p-2"
+                autoComplete="off"
+                placeholder='e.g. Nails, Brows, etc.'
+              />
+              <FieldError name="serviceType" className="text-red-600" />
+              </div>
+            )}
 
           <div>
             <Label

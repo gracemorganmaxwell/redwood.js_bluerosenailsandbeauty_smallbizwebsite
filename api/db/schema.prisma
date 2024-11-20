@@ -35,6 +35,8 @@ model GiftCardRequest {
   message        String
   recipientName  String @map("recipient_name")
   giftType       String @map("gift_type")
+  monetaryAmount String? @map("monetary_amount")
+  serviceType    String? @map("service_type")
   deliveryMethod String @map("delivery_method")
   recipientAddress String? @map("recipient_address")
   gifterAddress   String? @map("gifter_address")

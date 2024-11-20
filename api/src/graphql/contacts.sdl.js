@@ -49,6 +49,8 @@ export const schema = gql`
     message: String!
     recipientName: String!
     giftType: String!
+    monetaryAmount: String
+    serviceType: String
     deliveryMethod: String!
     recipientAddress: String
     gifterAddress: String
