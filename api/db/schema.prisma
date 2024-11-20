@@ -30,12 +30,15 @@ model Contact {
 
 model GiftCardRequest {
   id              Int      @id @default(autoincrement())
-  message         String
-  recipient_name  String
-  gift_type       String
-  delivery_method String
-  address         String
-  gifterAddress   String @map("gifter_address")
+  name           String
+  email          String
+  message        String
+  recipientName  String @map("recipient_name")
+  giftType       String @map("gift_type")
+  deliveryMethod String @map("delivery_method")
+  recipientAddress String? @map("recipient_address")
+  gifterAddress   String? @map("gifter_address")
+  recipientEmail String? @map("recipient_email")
   recaptchaValue String? @map("recaptcha_value")
   createdAt      DateTime @map("created_at") @default(now())
 }

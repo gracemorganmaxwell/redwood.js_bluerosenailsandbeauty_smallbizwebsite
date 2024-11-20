@@ -47,11 +47,13 @@ export const schema = gql`
     name: String!
     email: String!
     message: String!
-    recipientName: String
-    giftType: String
-    deliveryMethod: String
-    address: String
+    recipientName: String!
+    giftType: String!
+    deliveryMethod: String!
+    recipientAddress: String
     gifterAddress: String
+    recipientEmail: String
+    recaptchaValue: String!
   }
 
   input UpdateContactInput {
