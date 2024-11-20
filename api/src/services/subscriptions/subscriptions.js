@@ -11,8 +11,6 @@ export const subscription = ({ id }) => {
 };
 
 export const createSubscription = ({ input }) => {
-  console.log(`API creating subscription: ${JSON.stringify(input)}`);
-
   try
   {
     return db.subscription.create({

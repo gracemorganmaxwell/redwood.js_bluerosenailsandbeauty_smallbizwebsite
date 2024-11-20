@@ -40,8 +40,6 @@ const Footer = () => {
         return
       }
 
-      console.log(JSON.stringify({ name, email, token }))
-
       await createSubscription({
         variables: { input: { name, email, recaptchaValue: token } }
       })
