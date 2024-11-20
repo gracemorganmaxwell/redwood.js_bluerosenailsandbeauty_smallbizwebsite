@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { Form, FormError, FieldError, Label, TextField, SelectField, TextAreaField } from '@redwoodjs/forms'
 import { gql, useMutation } from '@redwoodjs/web'
@@ -16,6 +16,9 @@ const CREATE_GIFT_CARD_REQUEST = gql`
 `
 
 const GiftCardRequestComponent = () => {
+  const [giftType, setGiftType] = useState('')
+  const [deliveryMethod, setDeliveryMethod] = useState('')
+
   const [createGiftCardRequest, { loading, error }] = useMutation(
     CREATE_GIFT_CARD_REQUEST,
     {
@@ -148,6 +151,8 @@ const GiftCardRequestComponent = () => {
             </Label>
             <SelectField
               name="giftType"
+              value={giftType}
+              onChange={(e) => setGiftType(e.target.value)}
               className="mt-1 w-full rounded border border-gray-300 p-2"
               validation={{ required: true }}
               errorClassName="border-red-500 text-left w-full rounded border p-2"
@@ -169,6 +174,8 @@ const GiftCardRequestComponent = () => {
             </Label>
             <SelectField
               name="deliveryMethod"
+              value={deliveryMethod}
+              onChange={(e) => setDeliveryMethod(e.target.value)}
               className="mt-1 w-full rounded border border-gray-300 p-2"
               validation={{ required: true }}
               errorClassName="border-red-500 text-left w-full rounded border p-2"
@@ -180,43 +187,61 @@ const GiftCardRequestComponent = () => {
             </SelectField>
             <FieldError name="deliveryMethod" className="text-red-600" />
           </div>
-
           {/* Conditionally Render Address Fields Based on Delivery Method */}
-          <div>
-            <Label
-              name="address"
-              className="block text-left text-gray-700"
-              errorClassName="text-red-600 text-left"
-            >
-              Recipient&apos;s Address:
-            </Label>
-            <TextField
-              name="address"
-              className="mt-1 w-full rounded border border-gray-300 p-2"
-              validation={{ required: true }}
-              errorClassName="border-red-500 text-left w-full rounded border p-2"
-              autoComplete="off"
-            />
-            <FieldError name="address" className="text-red-600" />
-          </div>
-
-          <div>
-            <Label
-              name="gifterAddress"
-              className="block text-left text-gray-700"
-              errorClassName="text-red-600 text-left"
-            >
-              Purchaser&apos;s Address:
-            </Label>
-            <TextField
-              name="gifterAddress"
-              className="mt-1 w-full rounded border border-gray-300 p-2"
-              validation={{ required: true }}
-              errorClassName="border-red-500 text-left w-full rounded border p-2"
-              autoComplete="off"
-            />
-            <FieldError name="gifterAddress" className="text-red-600" />
-          </div>
+          {deliveryMethod === 'Physical' && (
+            <div>
+              <Label
+                name="recipientAddress"
+                className="block text-left text-gray-700"
+                errorClassName="text-red-600 text-left"
+              >
+                Recipient&apos;s Address:
+              </Label>
+              <TextField
+                name="recipientAddress"
+                className="mt-1 w-full rounded border border-gray-300 p-2"
+                validation={{ required: true }}
+                errorClassName="border-red-500 text-left w-full rounded border p-2"
+                autoComplete="off"
+              />
+              <FieldError name="recipientAddress" className="text-red-600" />
+            </div>)}
+          {deliveryMethod === 'BuyersPhysical' && (
+            <div>
+              <Label
+                name="gifterAddress"
+                className="block text-left text-gray-700"
+                errorClassName="text-red-600 text-left"
+              >
+                Purchaser&apos;s Address:
+              </Label>
+              <TextField
+                name="gifterAddress"
+                className="mt-1 w-full rounded border border-gray-300 p-2"
+                validation={{ required: true }}
+                errorClassName="border-red-500 text-left w-full rounded border p-2"
+                autoComplete="off"
+              />
+              <FieldError name="gifterAddress" className="text-red-600" />
+            </div>)}
+          {deliveryMethod === 'E_Gift' && (
+            <div>
+              <Label
+                name="recipientEmail"
+                className="block text-left text-gray-700"
+                errorClassName="text-red-600 text-left"
+              >
+                Recipient&apos;s Email:
+              </Label>
+              <TextField
+                name="recipientEmail"
+                className="mt-1 w-full rounded border border-gray-300 p-2"
+                validation={{ required: true }}
+                errorClassName="border-red-500 text-left w-full rounded border p-2"
+                autoComplete="off"
+              />
+              <FieldError name="recipientEmail" className="text-red-600" />
+            </div>)}
 
           <div className="flex justify-center">
             <ReCAPTCHA
