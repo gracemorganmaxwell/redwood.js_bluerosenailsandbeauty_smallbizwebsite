@@ -173,6 +173,7 @@ const GiftCardRequestComponent = () => {
             <div>
               <Label
                 name="amount"
+                htmlFor="amount-input"
                 className="block text-left text-gray-700"
                 errorClassName="text-red-600 text-left"
               >
