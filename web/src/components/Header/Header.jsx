@@ -42,6 +42,12 @@ const NavigationComponent = () => {
           >
             Contact
           </Link>
+          <Link
+            to="/giftrequest"
+            className="rounded-[12px] border border-darkBlue px-3 py-3 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+          >
+            Gift Cards
+          </Link>
           <CtaButton className="shadow-md transition duration-300 hover:bg-darkBlue hover:text-white" />
         </div>
       </div>
