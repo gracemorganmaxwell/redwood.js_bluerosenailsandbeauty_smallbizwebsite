@@ -36,7 +36,7 @@ const GalleryRow = () => {
     {
       publicId: 'Gel_manicure_ja0p1o',
       type: 'image',
-      alt: 'Gel manicure, multiple colours of blue and purple with a feature deep silver metallic.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_with_soft_French_yzhhes',
@@ -46,82 +46,82 @@ const GalleryRow = () => {
     {
       publicId: 'Gel_manicure_with_matte_and_a_foil_feature_nail_q16lso',
       type: 'image',
-      alt: 'Gel manicure with light pink, matte black on some fingers, and a gold foil feature nail.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_with_glitter_feature_nails_xgydcj',
       type: 'image',
-      alt: 'Gel manicure of pale pink with glitter feature nails.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_with_glitter_feature_nails_3_rjfge3',
       type: 'image',
-      alt: 'Gel manicure in coral pink with glitter feature nails.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_with_classic_French_p41aoz',
       type: 'image',
-      alt: 'Gel manicure with classic French tip.',
+      alt: 'Gel manicure with classic french tip.',
     },
     {
       publicId: 'Gel_manicure_12_ph3o7r',
       type: 'image',
-      alt: 'Gel manicure of neutral metallic silver, black and bronze on different fingers.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_10_cepadw',
       type: 'image',
-      alt: 'Gel manicure in a soft rose pink metallic.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_9_kh2evv',
       type: 'image',
-      alt: 'Gel manicure in gold and black metallic on different fingers.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_8_mbx80q',
       type: 'image',
-      alt: 'Gel manicure in pale pink.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_7_dkcnvp',
       type: 'image',
-      alt: 'Gel manicure in pale blue.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_6_rygqcs',
       type: 'image',
-      alt: 'Gel manicure in bright vibrant pink.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_5_tjew3h',
       type: 'image',
-      alt: 'Gel manicure in bright vibrant pink on some fingers and metallic bronze on the others.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_4_lzzxxg',
       type: 'image',
-      alt: 'Gel manicure of beige on some fingers and metallic light bronze-beige on others.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_3_vk184w',
       type: 'image',
-      alt: 'Gel manicure bright rose pink on some fingers and glittery white on other fingers.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Gel_manicure_2_ydpnud',
       type: 'image',
-      alt: 'Gel manicure of a neutral rose pink.',
+      alt: 'Gel manicure.',
     },
     {
       publicId: 'Builder_gel_natural_nail_overlay_na7nkz',
       type: 'image',
-      alt: 'Builder gel natural nail overlay in a natural grey, green tone of colour.',
+      alt: 'Builder gel.',
     },
     {
       publicId: 'Builder_gel_natural_nail_overlay_with_glitter_art_hdyo8f',
       type: 'image',
-      alt: 'Builder gel natural nail overlay with glitter art.',
+      alt: 'Builder gel.',
     },
     // {
     //   publicId: 'Hybrid_brow_stain_and_shape_with_Lash_lift_and_tint_advpra',
