@@ -36,7 +36,7 @@ const AboutRow = () => {
               />
               {/* Box 4 */}
               <p className="text-center text-base sm:mr-2 sm:py-3 sm:text-right md:text-xl lg:text-2xl">
-                I&apos;m Anna, with over five years of passion for transforming
+                I&apos;m Anna, with over six years of passion for transforming
                 everyday stress into moments of beauty and relaxation.
               </p>
             </div>
