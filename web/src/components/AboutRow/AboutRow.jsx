@@ -4,12 +4,15 @@ import aboutImg1 from '/images/About-Img1.png'
 import aboutImg2 from '/images/About-Img2.png'
 import aboutImg3 from '/images/About-Img3.png'
 
+import HeadingComponent from '../HeadingComponent/HeadingComponent'
+
+
 const AboutRow = () => {
   return (
     <div className="bg-darkBlue py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl rounded-[12px] bg-white p-4 sm:max-w-[1159px] sm:p-6 md:p-8 lg:max-w-[1366px] lg:p-12">
-          <headingAssent label="My Story" />
+          <HeadingComponent title="My Story" />
           {/* About content */}
           <div className="mt-8 flex flex-col sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8">
             {/* Row 1 */}
