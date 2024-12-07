@@ -44,6 +44,14 @@ const NavigationComponent = () => {
           >
             Contact
           </Link>
+          <a
+            href="https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/all-offer?pId=969545" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+          >
+            Book Now
+          </a>
           <Link
             to="/giftrequest"
             className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
