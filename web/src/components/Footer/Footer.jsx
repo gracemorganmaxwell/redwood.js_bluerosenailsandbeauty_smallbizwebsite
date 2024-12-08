@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { gql, useMutation } from '@redwoodjs/web'
+import { toast } from '@redwoodjs/web/toast'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import emailIcon from '/images/EmailIcon.svg'
@@ -17,15 +18,24 @@ const CREATE_SUBSCRIPTION = gql`
 `
 
 const Footer = () => {
-  const [createSubscription, { loading, error }] = useMutation(CREATE_SUBSCRIPTION, {
-    onCompleted: () => {
-      alert('Thank you for subscribing!')
-    },
-    onError: (error) => {
-      console.error(JSON.stringify(error))
-      alert('There was an error submitting your message.')
-    },
-  })
+  const [createSubscription, { loading }] = useMutation(
+    CREATE_SUBSCRIPTION,
+    {
+      onCompleted: () => {
+        toast.success('👌 Thank you for subscribing! 😁 Your email has been added to our list.💙')
+        setName('')
+        setEmail('')
+      },
+      onError: (error) => {
+        if (error.message.includes('Unique constraint failed')) {
+          toast.error(' This email is already subscribed to our newsletter. 👀 😳 Please try a different email.')
+        } else {
+          console.error(error)
+          toast.error('There was an error submitting your message.😳😳 Please refresh the page and try again.')
+        }
+      },
+    }
+  )
   const recaptchaRef = useRef(null)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -36,16 +46,16 @@ const Footer = () => {
     try {
       const token = await recaptchaRef.current.executeAsync()
       if (!token) {
-        alert('reCAPTCHA verification failed. Please try again.')
+        toast.error('reCAPTCHA verification failed. Please try again.')
         return
       }
 
       await createSubscription({
-        variables: { input: { name, email, recaptchaValue: token } }
+        variables: { input: { name, email, recaptchaValue: token } },
       })
     } catch (error) {
-      console.error(JSON.stringify(error))
-      alert('Oops! Something went wrong. Please try again.')
+      console.error(error)
+      toast.error('Oops! Something went wrong. Please try again.')
     }
   }
 
@@ -62,7 +72,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61554185572939"
                 target="_blank"
                 rel="noreferrer"
-                className="h-18 w-18 block rounded-lg bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
+                className="h-18 w-18 block rounded-md bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
               >
                 <img
                   src={facebookIcon}
@@ -72,7 +82,7 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:bluerosenailsandbeauty@gmail.com"
-                className="h-18 w-18 block rounded-lg bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
+                className="h-18 w-18 block rounded-md bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
               >
                 <img
                   src={emailIcon}
@@ -84,7 +94,7 @@ const Footer = () => {
                 href="https://www.instagram.com/bluerose_nailsandbeauty/"
                 target="_blank"
                 rel="noreferrer"
-                className="h-18 w-18 block rounded-lg bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
+                className="h-18 w-18 block rounded-md bg-white p-2 shadow-lg transition-transform duration-200 hover:scale-110"
               >
                 <img
                   src={instagramIcon}
@@ -127,7 +137,7 @@ const Footer = () => {
                 allowFullScreen=""
                 loading="lazy"
                 title="Google Map"
-                className="rounded-lg border-0"
+                className="rounded-md border-0"
               ></iframe>
             </div>
           </div>
@@ -144,7 +154,7 @@ const Footer = () => {
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mb-2 w-full rounded-lg border border-white bg-transparent px-4 py-2 text-white focus:outline-none"
+                className="mb-2 w-full sm:w-3/4 md:w-2/3 mx-auto lg:mx-0 rounded-md border border-white bg-transparent px-4 py-2 text-white focus:outline-none"
                 required
               />
               <input
@@ -153,26 +163,27 @@ const Footer = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mb-2 w-full rounded-lg border border-white bg-transparent px-4 py-2 text-white focus:outline-none"
+                className="mb-2 w-full sm:w-3/4 md:w-2/3 mx-auto lg:mx-0 rounded-md border border-white bg-transparent px-4 py-2 text-white focus:outline-none"
                 required
               />
               <button
                 type="submit"
-                className="mt-2 rounded-lg bg-white px-6 py-2 text-lg font-semibold text-darkBlue transition duration-200 hover:bg-greyViolet focus:outline-none"
+                className="mt-2 w-full sm:w-3/4 md:w-2/3 mx-auto lg:mx-0 rounded-md bg-white px-6 py-2 text-lg font-semibold text-darkBlue transition duration-200 hover:bg-greyViolet focus:outline-none"
+                disabled={loading}
               >
-                Subscribe
+                {loading ? 'Submitting...' : 'Subscribe'}
               </button>
             </form>
           </div>
         </div>
 
-         <div className="flex justify-center">
-            <ReCAPTCHA
-              sitekey={process.env.REDWOOD_ENV_RECAPTCHA_SITE_KEY}
-              size="invisible"
-              ref={recaptchaRef}
-            />
-          </div>
+        <div className="flex justify-center">
+          <ReCAPTCHA
+            sitekey={process.env.REDWOOD_ENV_RECAPTCHA_SITE_KEY}
+            size="invisible"
+            ref={recaptchaRef}
+          />
+        </div>
 
         <LineSeparatorComponent />
 

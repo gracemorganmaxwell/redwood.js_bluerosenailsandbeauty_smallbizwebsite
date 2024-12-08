@@ -28,33 +28,25 @@ const NavigationComponent = () => {
         <div className="order-1 mr-4 hidden items-center space-x-4 font-gfs_didot_regular text-darkBlue md:order-3 md:mr-2 md:flex">
           <Link
             to="/treatments"
-            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+            className="rounded-md border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
           >
             Treatments
           </Link>
           <Link
             to="/gallery"
-            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+            className="rounded-md border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
           >
             Gallery
           </Link>
           <Link
             to="/contact"
-            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+            className="rounded-md border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
           >
             Contact
           </Link>
-          <a
-            href="https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/all-offer?pId=969545" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
-          >
-            Book Now
-          </a>
           <Link
             to="/giftrequest"
-            className="rounded-lg border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
+            className="rounded-md border border-darkBlue px-3 py-2 font-sans text-sm font-bold shadow-md transition duration-300 hover:bg-darkBlue hover:text-white md:text-base lg:text-lg"
           >
             Gift Cards
           </Link>

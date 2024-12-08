@@ -146,7 +146,7 @@ const HamburgerBtn = () => {
                 Gallery
               </Link>
               <a
-                href="https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/all-offer?pId=969545" // Replace with your actual external URL
+                href="https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/all-offer?pId=969545" // 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded p-2 text-right text-base font-bold transition duration-300 hover:bg-royalBlue hover:text-white md:text-lg lg:text-xl"
