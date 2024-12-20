@@ -16,7 +16,7 @@ const Card = ({ imageSrc, label, href }) => {
             className="h-auto w-full rounded"
           />
         </div>
-        <div className="label rounded-b bg-white px-2 py-4 transition-all hover:text-lg">
+        <div className="label flex items-center justify-center rounded-b bg-white px-2 py-4 text-center transition-all hover:text-lg hover:font-bold">
           {label}
         </div>
       </div>
