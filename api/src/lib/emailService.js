@@ -1,3 +1,5 @@
+const notificationEmailAddress = process.env.REDWOOD_ENV_NOTIFICATION_EMAIL_ADDRESS;
+
 const sendEmailNotification = async (type, data) => {
   try {
     const response = await fetch('https://lzfzpdwbneaoqibmwqht.supabase.co/functions/v1/send-email', {
@@ -8,6 +10,7 @@ const sendEmailNotification = async (type, data) => {
       },
       body: JSON.stringify({
         type,
+        to: notificationEmailAddress,
         ...data
       }),
     })

@@ -5,6 +5,7 @@ import { sendSMTPEmail } from './smtp.ts'
 
 interface EmailBase {
   type: 'contact' | 'giftcard' | 'subscription'
+  to: string
   name: string
   email: string
   message?: string
@@ -33,10 +34,11 @@ interface SubscriptionEmail extends EmailBase {
 
 type EmailPayload = ContactEmail | GiftCardEmail | SubscriptionEmail
 
-function prepareEmailContent(payload: EmailPayload): { subject: string, body: string } {
+function prepareEmailContent(payload: EmailPayload): { to:string, subject: string, body: string } {
   switch (payload.type) {
     case 'contact':
       return {
+        to: payload.to,
         subject: 'New Contact Form Submission',
         body: `
           Name: ${payload.name}
@@ -45,8 +47,8 @@ function prepareEmailContent(payload: EmailPayload): { subject: string, body: st
         `
       }
     case 'giftcard':
-    case 'giftcard':
       return {
+        to: payload.to,
         subject: 'New Gift Card Request',
         body: `
           Requester Name: ${payload.name}
@@ -63,8 +65,8 @@ function prepareEmailContent(payload: EmailPayload): { subject: string, body: st
         `
       }
     case 'subscription':
-    case 'subscription':
       return {
+        to: payload.to,
         subject: 'New Newsletter Subscription',
         body: `
           Name: ${payload.name}
@@ -96,10 +98,10 @@ serve(async (req) => {
     )
 
     // Prepare and send email
-    const { subject, body } = prepareEmailContent(payload)
+    const { to, subject, body } = prepareEmailContent(payload)
 
     const emailResult = await sendSMTPEmail(
-      'bluerosenailsandbeauty@gmail.com',
+      to,
       subject,
       body
     )
