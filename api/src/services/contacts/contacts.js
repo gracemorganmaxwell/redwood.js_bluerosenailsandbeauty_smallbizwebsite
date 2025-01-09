@@ -1,4 +1,5 @@
 import { db } from "src/lib/db";
+import { sendEmailNotification } from "src/lib/emailService";
 
 export const contacts = () => {
   return db.contact.findMany();
@@ -10,10 +11,15 @@ export const contact = ({ id }) => {
   });
 };
 
-export const createContact = ({ input }) => {
-  return db.contact.create({
+export const createContact = async ({ input }) => {
+  const cont = await db.contact.create({
     data: input,
   });
+  await sendEmailNotification(
+    'contact',
+    input,
+  );
+  return cont;
 };
 
 export const updateContact = ({ id, input }) => {

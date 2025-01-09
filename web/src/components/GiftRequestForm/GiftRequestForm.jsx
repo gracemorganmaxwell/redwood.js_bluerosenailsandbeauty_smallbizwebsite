@@ -18,8 +18,6 @@ import SubmitButton from 'src/components/FormSubmitBtnComponent/FormSubmitBtnCom
 
 import FormBottomPrivacyCopy from 'src/components/PrivacyPolicyMessageComponent/PrivacyPolicyMessageComponent'
 
-import { sendEmailNotification } from 'src/lib/emailService'
-
 const CREATE_GIFT_CARD_REQUEST = gql`
   mutation CreateGiftCardRequestMutation($input: CreateGiftCardRequestInput!) {
     createGiftCardRequest(input: $input) {
@@ -60,7 +58,6 @@ const GiftRequestForm = () => {
         return
       }
 
-      // First, create gift card request in database
       await createGiftCardRequest({
         variables: {
           input: {
@@ -69,13 +66,6 @@ const GiftRequestForm = () => {
             recaptchaValue: token,
           },
         },
-      })
-
-      // Then send email notification
-      await sendEmailNotification('giftcard', {
-        ...data,
-        monetaryAmount,
-        recaptchaValue: token,
       })
 
       toast.success('👌 Thank you for your gift card request! 😁 We will be in touch soon.💙')

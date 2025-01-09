@@ -14,7 +14,6 @@ import { toast } from '@redwoodjs/web/toast'
 
 import FormSubmitBtnComponent from 'src/components/FormSubmitBtnComponent/FormSubmitBtnComponent'
 import FormBottomPrivacyCopy from 'src/components/PrivacyPolicyMessageComponent/PrivacyPolicyMessageComponent'
-import { sendEmailNotification } from 'src/lib/emailService'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -48,7 +47,6 @@ const ContactFormComponent = () => {
         return
       }
 
-      // First, create contact in database
       await createContact({
         variables: {
           input: {
@@ -56,12 +54,6 @@ const ContactFormComponent = () => {
             recaptchaValue: token,
           },
         },
-      })
-
-      // Then send email notification
-      await sendEmailNotification('contact', {
-        ...data,
-        recaptchaValue: token,
       })
 
       toast.success('👌 Thank you for your message! 😁 We will be in touch soon.💙')

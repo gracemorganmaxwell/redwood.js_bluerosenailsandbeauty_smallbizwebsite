@@ -1,4 +1,5 @@
 import { db } from "src/lib/db";
+import { sendEmailNotification } from "src/lib/emailService";
 
 export const subscriptions = () => {
   return db.subscription.findMany();
@@ -10,12 +11,14 @@ export const subscription = ({ id }) => {
   });
 };
 
-export const createSubscription = ({ input }) => {
+export const createSubscription = async ({ input }) => {
   try
   {
-    return db.subscription.create({
+    const sub = await db.subscription.create({
       data: input,
     });
+    await sendEmailNotification('subscription', input);
+    return sub;
   }
   catch (error)
   {
