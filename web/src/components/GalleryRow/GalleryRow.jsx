@@ -163,6 +163,56 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Hybrid brow stain shape with lash lift tint.',
     },
+    {
+      publicId: 'Lash_lift_eyebrow_tint_and_shape_ppqqp6',
+      type: 'image',
+      alt: 'Lash lift, eyebrow tint and shape.',
+    },
+    {
+      publicId: 'Lash_lift_and_brow_lamination_vgs4nw',
+      type: 'image',
+      alt: 'Lash lift and brow lamination.',
+    },
+    {
+      publicId: 'Gel_pedicre_hxgkwl',
+      type: 'image',
+      alt: 'Brow lamination.',
+    },
+    {
+      publicId: 'Gel_pedicre_2_vl8inz',
+      type: 'image',
+      alt: 'Gel pedicure.',
+    },
+    {
+      publicId: 'Gel_manicure_d9zcdp',
+      type: 'image',
+      alt: 'Gel manicure.',
+    },
+    {
+      publicId: 'Gel_manicure_with_french_u2y5lc',
+      type: 'image',
+      alt: 'Gel manicure with french tips.',
+    },
+    {
+      publicId: 'Gel_manicure_2_vovziz',
+      type: 'image',
+      alt: 'Gel manicure.',
+    },
+    {
+      publicId: 'Gel_manicure_3_opgluq',
+      type: 'image',
+      alt: 'Gel manicure.',
+    },
+    {
+      publicId: 'Gel_manicure_with_french_2_tuv7sv',
+      type: 'image',
+      alt: 'Gel manicure with french tips.',
+    },
+    {
+      publicId: 'Builder_gel_manicure_cszqqx',
+      type: 'image',
+      alt: 'Builder gel manicure.',
+    },
   ]
 
   const preloadMedia = (index) => {
