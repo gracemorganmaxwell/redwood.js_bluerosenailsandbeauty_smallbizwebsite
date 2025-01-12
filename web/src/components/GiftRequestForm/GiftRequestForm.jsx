@@ -51,22 +51,29 @@ const GiftRequestForm = () => {
   const [monetaryAmount, setMonetaryAmount] = useState('')
 
   const onSubmit = async (data) => {
-    // Execute the reCAPTCHA v3
-    const token = await recaptchaRef.current.executeAsync()
-    if (!token) {
-      toast.error('reCAPTCHA verification failed. Please try again.')
-      return
-    }
+    try {
+      const token = await recaptchaRef.current.executeAsync()
+      if (!token) {
+        toast.error('reCAPTCHA verification failed. Please try again.')
+        return
+      }
 
-    await createGiftCardRequest({
-      variables: {
-        input: {
-          ...data,
-          monetaryAmount,
-          recaptchaValue: token,
+      await createGiftCardRequest({
+        variables: {
+          input: {
+            ...data,
+            monetaryAmount,
+            recaptchaValue: token,
+          },
         },
-      },
-    })
+      })
+
+      toast.success('👌 Thank you for your gift card request! 😁 We will be in touch soon.💙')
+      reset()
+    } catch (error) {
+      console.error(error)
+      toast.error('There was an error submitting your request. Please try again.')
+    }
   }
 
   return (

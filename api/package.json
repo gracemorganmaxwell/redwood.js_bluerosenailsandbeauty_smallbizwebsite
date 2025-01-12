@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "8.4.0",
-    "@redwoodjs/graphql-server": "8.4.0"
+    "@redwoodjs/graphql-server": "8.4.0",
+    "@sendgrid/mail": "^8.1.4",
+    "supabase": "^2.0.0",
+    "supabase-cli": "^0.0.21"
   }
 }

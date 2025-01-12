@@ -40,21 +40,28 @@ const ContactFormComponent = () => {
   const recaptchaRef = useRef(null)
 
   const onSubmit = async (data) => {
-    // Execute the reCAPTCHA v3
-    const token = await recaptchaRef.current.executeAsync()
-    if (!token) {
-      toast.error('👀 reCAPTCHA verification failed. Please try again. 😏')
-      return
-    }
+    try {
+      const token = await recaptchaRef.current.executeAsync()
+      if (!token) {
+        toast.error('👀 reCAPTCHA verification failed. Please try again. 😏')
+        return
+      }
 
-    await createContact({
-      variables: {
-        input: {
-          ...data,
-          recaptchaValue: token,
+      await createContact({
+        variables: {
+          input: {
+            ...data,
+            recaptchaValue: token,
+          },
         },
-      },
-    })
+      })
+
+      toast.success('👌 Thank you for your message! 😁 We will be in touch soon.💙')
+      reset()
+    } catch (error) {
+      console.error(error)
+      toast.error('There was an error submitting your message. Please try again.')
+    }
   }
 
   return (

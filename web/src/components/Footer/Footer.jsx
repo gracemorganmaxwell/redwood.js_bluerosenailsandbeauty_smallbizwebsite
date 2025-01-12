@@ -8,7 +8,6 @@ import facebookIcon from '/images/facebook.svg'
 import instagramIcon from '/images/InstagramIcon.png'
 
 import LineSeparatorComponent from 'src/components/LineSeparator/LineSeparator'
-
 const CREATE_SUBSCRIPTION = gql`
   mutation CreateSubscriptionMutation($input: CreateSubscriptionInput!) {
     createSubscription(input: $input) {
@@ -53,6 +52,10 @@ const Footer = () => {
       await createSubscription({
         variables: { input: { name, email, recaptchaValue: token } },
       })
+
+      toast.success('👌 Thank you for subscribing! 😁 Your email has been added to our list.💙')
+      setName('')
+      setEmail('')
     } catch (error) {
       console.error(error)
       toast.error('Oops! Something went wrong. Please try again.')

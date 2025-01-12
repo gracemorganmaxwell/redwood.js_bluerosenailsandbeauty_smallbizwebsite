@@ -1,4 +1,5 @@
 import { db } from "src/lib/db";
+import { sendEmailNotification } from "src/lib/emailService";
 
 export const giftCardRequests = () => {
   return db.giftCardRequest.findMany();
@@ -10,10 +11,15 @@ export const giftCardRequest = ({ id }) => {
   });
 };
 
-export const createGiftCardRequest = ({ input }) => {
-  return db.giftCardRequest.create({
+export const createGiftCardRequest = async ({ input }) => {
+  const gcr = await db.giftCardRequest.create({
     data: input,
   });
+  await sendEmailNotification({
+    type: 'giftcard',
+    data: input
+  });
+  return gcr;
 };
 
 export const updateGiftCardRequest = ({ id, input }) => {
