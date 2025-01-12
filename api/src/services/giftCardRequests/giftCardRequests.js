@@ -15,7 +15,10 @@ export const createGiftCardRequest = async ({ input }) => {
   const gcr = await db.giftCardRequest.create({
     data: input,
   });
-  await sendEmailNotification('giftcard', input);
+  await sendEmailNotification({
+    type: 'giftcard',
+    data: input
+  });
   return gcr;
 };
 

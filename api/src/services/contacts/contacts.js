@@ -15,10 +15,10 @@ export const createContact = async ({ input }) => {
   const cont = await db.contact.create({
     data: input,
   });
-  await sendEmailNotification(
-    'contact',
-    input,
-  );
+  await sendEmailNotification({
+    type: 'contact',
+    data: input,
+  });
   return cont;
 };
 

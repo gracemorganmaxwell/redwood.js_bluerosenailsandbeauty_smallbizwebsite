@@ -17,7 +17,10 @@ export const createSubscription = async ({ input }) => {
     const sub = await db.subscription.create({
       data: input,
     });
-    await sendEmailNotification('subscription', input);
+    await sendEmailNotification({
+      type: 'subscription',
+      data: input
+    });
     return sub;
   }
   catch (error)
