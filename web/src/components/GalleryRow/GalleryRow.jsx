@@ -23,11 +23,6 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Gel manicure with coloured french tips.',
     },
-    // {
-    //   publicId: 'Lash_lift_and_hybrid_brow_stain_zf3e33',
-    //   type: 'video',
-    //   alt: 'Lash lift and hybrid brow stain.',
-    // },
     {
       publicId: 'Soft_gel_extension_with_a_stamp_feature_nail_s46ixx',
       type: 'image',
@@ -123,16 +118,6 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Builder gel.',
     },
-    // {
-    //   publicId: 'Hybrid_brow_stain_and_shape_with_Lash_lift_and_tint_advpra',
-    //   type: 'video',
-    //   alt: 'Hybrid brow stain and shape with Lash lift and tint.',
-    // },
-    // {
-    //   publicId: 'Brow_lamination_with_hybrid_brow_stain_bonfyf',
-    //   type: 'video',
-    //   alt: 'Brow lamination with hybrid brow stain.',
-    // },
     {
       publicId: 'Hybrid_brow_stain_cyphij',
       type: 'image',
@@ -152,11 +137,6 @@ const GalleryRow = () => {
       publicId: 'Hybrid_brow_stain_and_shape_2_stains',
       type: 'image',
       alt: 'Hybrid brow stain and shape.',
-    },
-    {
-      publicId: 'Hybrid_brow_stain_shape_with_lash_lift_tint_sb5bca',
-      type: 'image',
-      alt: 'Hybrid brow stain shape with lash lift tint.',
     },
     {
       publicId: 'Hybrid_brow_stain_shape_with_lash_lift_tint_2_jdrf3z',
