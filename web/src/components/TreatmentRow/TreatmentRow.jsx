@@ -17,18 +17,22 @@ const TreatmentRow = () => {
     {
       image: Nails,
       label: 'Nails',
-      href: '/nails-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
-    { image: Brows, label: 'Brows', href: '/brows-fresha-link' },
+    {
+      image: Brows,
+      label: 'Brows',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
+    },
     {
       image: Waxing,
       label: 'Waxing',
-      href: '/bodywaxing-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
     {
       image: Massage,
       label: 'Massage',
-      href: '/massage-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
     {
       image: Consult,
@@ -38,17 +42,17 @@ const TreatmentRow = () => {
     {
       image: FootTreatment,
       label: 'Foot Treatments',
-      href: '/foot-treatment-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
     {
       image: UnisexWaxing,
       label: 'Unisex Waxing',
-      href: '/unisex-waxing-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
     {
       image: NailsLashesPackages,
       label: 'Lash & Brow Packages',
-      href: '/brow-n-lash-pack-fresha-link',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
     },
   ]
 
