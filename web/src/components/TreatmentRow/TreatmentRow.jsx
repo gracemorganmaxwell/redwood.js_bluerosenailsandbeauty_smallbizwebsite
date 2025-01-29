@@ -22,7 +22,7 @@ const TreatmentRow = () => {
     {
       image: Brows,
       label: 'Brows',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
+      href: '/brows-fresha-link',
     },
     {
       image: Waxing,
