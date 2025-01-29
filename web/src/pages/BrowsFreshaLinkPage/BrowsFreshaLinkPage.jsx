@@ -5,8 +5,8 @@ const BrowsFreshaLinkPage = () => {
   return (
     <>
       <Metadata
-        title="Brows Treatments on offer"
-        description="Brows Treatments on offer"
+        title="Blue Rose Nails and Beauty- Brows Treatments"
+        description="Blue Rose Nails and Beauty- Brows Treatments"
       />
       <BrowsTreatmentComponent />
     </>
