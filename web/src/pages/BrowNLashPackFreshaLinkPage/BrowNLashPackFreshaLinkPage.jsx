@@ -1,25 +1,15 @@
 // import { Link, routes } from '@redwoodjs/router'
 import { Metadata } from '@redwoodjs/web'
+import LashNBrowPackageTreatmentsComponent from 'src/components/LashNBrowPackageTreatmentsComponent/LashNBrowPackageTreatmentsComponent'
 
 const BrowNLashPackFreshaLinkPage = () => {
   return (
     <>
       <Metadata
-        title="BrowNLashPackFreshaLink"
-        description="BrowNLashPackFreshaLink page"
+        title="Blue Rose Nails and Beauty - Brow and Lash Packages"
+        description="Blue Rose Nails and Beauty - Brow and Lash Packages"
       />
-
-      <h1>BrowNLashPackFreshaLinkPage</h1>
-      <p>
-        Find me in{' '}
-        <code>
-          ./web/src/pages/BrowNLashPackFreshaLinkPage/BrowNLashPackFreshaLinkPage.jsx
-        </code>
-      </p>
-      {/*
-           My default route is named `browNLashPackFreshaLink`, link to me with:
-           `<Link to={routes.browNLashPackFreshaLink()}>BrowNLashPackFreshaLink</Link>`
-        */}
+      <LashNBrowPackageTreatmentsComponent />
     </>
   )
 }
