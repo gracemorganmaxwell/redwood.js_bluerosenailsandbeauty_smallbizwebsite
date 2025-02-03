@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react'
-import { responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
+import { fill } from "@cloudinary/url-gen/actions/resize"
 
 import HeadingComponent from 'src/components/HeadingComponent/HeadingComponent'
-import Lightbox from 'src/components/Lightbox/Lightbox'
+import GalleryLightbox from 'src/components/GalleryLightbox/GalleryLightbox'
+import headingAssent from '/images/headingAssent.svg'
 
 const cld = new Cloudinary({
   cloud: {
@@ -230,44 +231,61 @@ const GalleryRow = () => {
   return (
     <div className="bg-darkBlue py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-4xl rounded-[12px] bg-white p-8 sm:p-12 md:p-16 lg:mx-auto lg:max-w-[1366px]">
-          <HeadingComponent title="My Work" />
+        <div className="mx-auto max-w-4xl rounded-[12px] bg-white p-8 sm:p-12 md:p-16 lg:mx-auto lg:max-w-[1366px] shadow-lg">
+          <img
+            src={headingAssent}
+            alt=""
+            className="lg:w-100 mx-auto mb-6 h-auto w-auto sm:w-60 md:w-80"
+          />
+          <h1 className="text-center font-gfs_didot_regular text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+            My Work
+          </h1>
+          <img
+            src={headingAssent}
+            alt=""
+            className="lg:w-100 mx-auto mb-6 h-auto w-auto sm:w-60 md:w-80"
+          />
           <div className="flex h-full items-center justify-center">
             <div className="relative w-full max-w-[1400px] rounded-lg bg-white p-5 shadow-lg">
-              <div
-                role="button"
-                onClick={openLightbox}
-                onKeyDown={handleMediaKeyDown}
-                tabIndex={0}
-                aria-label="Open Lightbox"
-              >
+              <div className="flex justify-center items-center">
+                <div
+                  className="relative cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg"
+                  role="button"
+                  onClick={() => {
+                    openLightbox()
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      openLightbox()
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-label={`Open ${galleryMedia[currentMediaIndex].type} in lightbox`}
+                >
                   {galleryMedia[currentMediaIndex].type === 'image' ? (
                     <AdvancedImage
-                      className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
-                      cldImg={cld.image(galleryMedia[currentMediaIndex].publicId)}
-                      plugins={[responsive(), placeholder()]}
+                      cldImg={cld.image(galleryMedia[currentMediaIndex].publicId)
+                        .resize(fill().width(600).height(450))}
                       alt={galleryMedia[currentMediaIndex].alt}
+                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover
+                        shadow-lg transition-opacity duration-300 hover:opacity-90
+                        aspect-[4/3] max-w-[600px]"
                     />
                   ) : (
                     <AdvancedVideo
-                      className="mx-auto h-auto max-h-[200px] w-full max-w-[200px] cursor-pointer rounded-lg object-cover shadow-lg md:max-h-[300px] md:max-w-[300px] lg:max-h-[500px] lg:max-w-[500px]"
-                      cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)}
+                      cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)
+                        .resize(fill().width(600).height(450))}
                       controls
-                      autoPlay
                       muted
-                      plugins={[responsive(), placeholder()]}
-
-                      aria-label="Video without audio or captions"
+                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover
+                        shadow-lg transition-opacity duration-300 hover:opacity-90
+                        aspect-[4/3] max-w-[600px]"
                     >
-                      <track
-                        kind="captions"
-                        src=""
-                        srcLang="en"
-                        label="No captions"
-                      />
+                      <track kind="captions" src="" srcLang="en" label="No captions" />
                       Your browser does not support the video tag.
                     </AdvancedVideo>
                   )}
+                </div>
               </div>
               <div className="mt-4 text-center font-gfs_didot_regular text-darkBlue sm:text-xl md:text-2xl lg:text-3xl">
                 {galleryMedia[currentMediaIndex].alt}
@@ -277,7 +295,8 @@ const GalleryRow = () => {
               </div>
               <div className="mt-4 text-center md:hidden">
                 <button
-                  className="rounded bg-blue-900 px-4 py-2 font-gfs_didot_regular text-white shadow-lg transition duration-300 hover:bg-blue-700"
+                  className="rounded bg-darkBlue px-4 py-2 font-gfs_didot_regular text-white shadow-lg
+                    transition duration-300 hover:bg-slateBlue"
                   onClick={openLightbox}
                 >
                   View Media Larger
@@ -285,14 +304,18 @@ const GalleryRow = () => {
               </div>
               <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 transform justify-between px-5">
                 <button
-                  className="h-12 w-12 cursor-pointer rounded-full bg-blue-900 text-2xl font-bold text-white shadow-lg transition duration-300 hover:bg-blue-700"
+                  className="h-12 w-12 cursor-pointer rounded-full bg-darkBlue text-2xl font-bold
+                    text-white shadow-lg transition duration-300 hover:bg-slateBlue flex items-center
+                    justify-center"
                   onClick={previousMedia}
                   aria-label="Previous Media"
                 >
                   &lt;
                 </button>
                 <button
-                  className="h-12 w-12 cursor-pointer rounded-full bg-blue-900 text-2xl font-bold text-white shadow-lg transition duration-300 hover:bg-blue-700"
+                  className="h-12 w-12 cursor-pointer rounded-full bg-darkBlue text-2xl font-bold
+                    text-white shadow-lg transition duration-300 hover:bg-slateBlue flex items-center
+                    justify-center"
                   onClick={nextMedia}
                   aria-label="Next Media"
                 >
@@ -303,7 +326,7 @@ const GalleryRow = () => {
           </div>
 
           {isLightboxOpen && (
-            <Lightbox
+            <GalleryLightbox
               mediaItems={galleryMedia}
               currentMediaIndex={currentMediaIndex}
               previousMedia={previousMedia}

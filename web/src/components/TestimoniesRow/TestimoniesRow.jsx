@@ -6,26 +6,29 @@ import headingAssent from '/images/headingAssent.svg'
 import clientPhoto3 from '/images/ReviewerTerri.png'
 
 import './TestimoniesRow.css'
+import TestimoniesLightbox from 'src/components/TestimoniesLightbox/TestimoniesLightbox'
 
 const TestimoniesRow = () => {
   const [currentTestimonyIndex, setCurrentTestimonyIndex] = useState(0)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [lightboxTestimonies, setLightboxTestimonies] = useState([])
 
   const testimonies = [
     {
       quote:
-        '"...Anna from Blue Rose Nails & Beauty. She has been doing my eyebrows and lashes for years and they are absolutely perfect every time! She spends the extra time to make sure my lashes have the best lift possible and maps out my brows to get the perfect shape. Anna\u2019s passion for what she does is second to none and she always goes above and beyond to make me feel special. She\u2019s also just such a lovely, positive and caring person and I always look forward to our catch ups and walking out feeling pampered \u{1F497}\u{1F497}\u{1F497}"',
+        '"...Anna from Blue Rose Nails & Beauty. She has been doing my eyebrows and lashes for years and they are absolutely perfect every time! She spends the extra time to make sure my lashes have the best lift possible and maps out my brows to get the perfect shape. Anna\u2019s passion for what she does is second to none and she always goes above and beyond to make me feel special. She\u2019s also just such a lovely, positive and caring person and I always look forward to our catch ups and walking out feeling pampered 💗💗💗"',
       clientName: 'Charlotte Turner',
       clientPhoto: clientPhoto1,
     },
     {
       quote:
-        '"Absolutely loved my visit at blue rose nails and beauty today! Anna is so professional and kind. I\u2019m new to getting eyelash/eyebrow tint and she talked me through every step of the way. Anna is so amazing at tinting. I also got a face and scalp massage which was so blissful! Can\u2019t recommend Anna enough!! thank you so much hun! \u{1F60D}\u{1F60D}"',
+        '"Absolutely loved my visit at blue rose nails and beauty today! Anna is so professional and kind. I\u2019m new to getting eyelash/eyebrow tint and she talked me through every step of the way. Anna is so amazing at tinting. I also got a face and scalp massage which was so blissful! Can\u2019t recommend Anna enough!! thank you so much hun! 😍😍"',
       clientName: 'Hazel Mathieson',
       clientPhoto: clientPhoto2,
     },
     {
       quote:
-        '"Anna is incredible at what she does... my eyebrows and lashes have never looked as amazing as they have after she was done with them. She is so talented at what she does and so kind aswell. Highly recommend"',
+        '"Anna is incredible at what she does... my eyebrows and lashes have never looked as amazing as they have after she was done with them. She is so talented at what she does and so kind as well. Highly recommend"',
       clientName: 'Terri Carlson',
       clientPhoto: clientPhoto3,
     },
@@ -51,6 +54,16 @@ const TestimoniesRow = () => {
     }
   }
 
+  const openLightbox = () => {
+    setLightboxTestimonies(testimonies)
+    setIsLightboxOpen(true)
+    setCurrentTestimonyIndex(0)
+  }
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false)
+  }
+
   return (
     <div className="bg-darkBlue py-16 sm:py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -74,48 +87,34 @@ const TestimoniesRow = () => {
           {/* Testimony Carousel */}
           <div className="testimonies">
             <div className="testimonies-container">
-              <div className="testimonies-controls">
-                <button
-                  className="testimony-control-button"
-                  onClick={previousTestimony}
-                  onKeyDown={handleKeyPress}
-                  tabIndex="0"
-                >
-                  &lt;
-                </button>
-                <div className="testimony-progress">
-                  {testimonies.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`progress-dot ${
-                        index === currentTestimonyIndex ? 'active' : ''
-                      }`}
-                      onClick={() => setCurrentTestimonyIndex(index)}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          setCurrentTestimonyIndex(index)
-                        }
-                      }}
-                      tabIndex="0"
-                      aria-label={`Go to testimony ${index + 1}`}
-                    ></button>
-                  ))}
-                </div>
-                <button
-                  className="testimony-control-button"
-                  onClick={nextTestimony}
-                  onKeyDown={handleKeyPress}
-                  tabIndex="0"
-                >
-                  &gt;
-                </button>
-              </div>
+              {/* Previous Button */}
+              <button
+                className="testimony-control-button prev-button"
+                onClick={previousTestimony}
+                onKeyDown={handleKeyPress}
+                tabIndex="0"
+                aria-label="Previous Testimony"
+              >
+                &lt;
+              </button>
+              {/* Testimony Card */}
               <div className="testimony-card">
                 <div className="testimony-quote">
                   <p className="testimony-subheading">I highly recommend...</p>
-                  <p className="testimony-text">
-                    {testimonies[currentTestimonyIndex].quote}
-                  </p>
+                  <div className="quote-container">
+                    <p>
+                      <span className="testimony-text">
+                        {testimonies[currentTestimonyIndex].quote.slice(0, 150)}...
+                      </span>
+                      <button
+                        className="view-more-button-small"
+                        onClick={openLightbox}
+                        aria-label="View More Testimonies"
+                      >
+                        View More
+                      </button>
+                    </p>
+                  </div>
                 </div>
                 <div className="testimony-client">
                   <img
@@ -128,8 +127,46 @@ const TestimoniesRow = () => {
                   </p>
                 </div>
               </div>
-
+              {/* Next Button */}
+              <button
+                className="testimony-control-button next-button"
+                onClick={nextTestimony}
+                onKeyDown={handleKeyPress}
+                tabIndex="0"
+                aria-label="Next Testimony"
+              >
+                &gt;
+              </button>
             </div>
+            {/* Progress Dots */}
+            <div className="testimony-progress">
+              {testimonies.map((_, index) => (
+                <button
+                  key={index}
+                  className={`progress-dot ${
+                    index === currentTestimonyIndex ? 'active' : ''
+                  }`}
+                  onClick={() => setCurrentTestimonyIndex(index)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      setCurrentTestimonyIndex(index)
+                    }
+                  }}
+                  tabIndex="0"
+                  aria-label={`Go to testimony ${index + 1}`}
+                ></button>
+              ))}
+            </div>
+            {/* Lightbox for Additional Testimonies */}
+            {isLightboxOpen && (
+              <TestimoniesLightbox
+                testimonies={testimonies}
+                currentTestimonyIndex={currentTestimonyIndex}
+                previousTestimony={previousTestimony}
+                nextTestimony={nextTestimony}
+                closeLightbox={closeLightbox}
+              />
+            )}
           </div>
         </div>
       </div>
