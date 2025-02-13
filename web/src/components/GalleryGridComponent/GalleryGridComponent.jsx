@@ -5,7 +5,7 @@ import { lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
 
 import HeadingComponent from '../HeadingComponent/HeadingComponent'
-import Lightbox from '../Lightbox/Lightbox'
+import GalleryLightbox from '../GalleryLightbox/GalleryLightbox'
 import LineSeparatorComponent from '../LineSeparator/LineSeparator'
 import SubheadingComponent from '../SubHeadingComponent/SubHeadingComponent'
 
@@ -499,7 +499,7 @@ const GalleryGridComponent = () => {
       </div>
 
       {isLightboxOpen && (
-        <Lightbox
+        <GalleryLightbox
           mediaItems={galleryMedia}
           currentMediaIndex={currentMediaIndex}
           previousMedia={previousMedia}
