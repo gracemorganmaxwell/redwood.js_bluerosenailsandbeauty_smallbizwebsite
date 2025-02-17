@@ -1,120 +1,98 @@
-# README
+# Blue Rose Nails and Beauty
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+Welcome to the Blue Rose Nails and Beauty project, built with [RedwoodJS](https://redwoodjs.com) and hosted on Vercel. This project uses Supabase for its database needs.
 
-> **Prerequisites**
->
-> - Redwood requires [Node.js](https://nodejs.org/en/) (=20.x) and [Yarn](https://yarnpkg.com/)
-> - Are you on Windows? For best results, follow our [Windows development setup](https://redwoodjs.com/docs/how-to/windows-development-setup) guide
+## Prerequisites
 
-Start by installing dependencies:
+- Redwood requires [Node.js](https://nodejs.org/en/) (=20.x) and [Yarn](https://yarnpkg.com/)
+- Are you on Windows? For best results, follow our [Windows development setup](https://redwoodjs.com/docs/how-to/windows-development-setup) guide
 
-```
-yarn install
-```
+## Development Setup
 
-Then start the development server:
+1. **Install Dependencies:**
 
-```
-yarn redwood dev
-```
+   Run the following command to install all necessary dependencies:
 
-Your browser should automatically open to [http://localhost:8910](http://localhost:8910) where you'll see the Welcome Page, which links out to many great resources.
+   ```bash
+   yarn install
+   ```
 
-> **The Redwood CLI**
->
-> Congratulations on running your first Redwood CLI command! From dev to deploy, the CLI is with you the whole way. And there's quite a few commands at your disposal:
->
-> ```
-> yarn redwood --help
-> ```
->
-> For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
+2. **Start the Development Server:**
 
-## Prisma and the database
+   Use the Redwood CLI to start the development server:
 
-Redwood wouldn't be a full-stack framework without a database. It all starts with the schema. Open the [`schema.prisma`](api/db/schema.prisma) file in `api/db` and replace the `UserExample` model with the following `Post` model:
+   ```bash
+   yarn redwood dev
+   ```
 
-```prisma
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
-}
-```
+   Your browser should automatically open to [http://localhost:8910](http://localhost:8910) where you'll see the Welcome Page, which links out to many great resources.
 
-Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript ORM, to talk to the database. Prisma's schema offers a declarative way of defining your app's data models. And Prisma [Migrate](https://www.prisma.io/migrate) uses that schema to make database migrations hassle-free:
+3. **Database Setup:**
 
-```
-yarn rw prisma migrate dev
+   This project uses Supabase as its database. Ensure you have the correct environment variables set up in your `.env` file:
 
-# ...
+   ```bash
+   SUPABASE_URL=https://your-supabase-url.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+   ```
 
-? Enter a name for the new migration: › create posts
-```
+   For more information on setting up Supabase, refer to the [Supabase documentation](https://supabase.io/docs).
 
-> `rw` is short for `redwood`
+4. **Prisma and the Database:**
 
-You'll be prompted for the name of your migration. `create posts` will do.
+   To apply database migrations, use:
 
-Now let's generate everything we need to perform all the CRUD (Create, Retrieve, Update, Delete) actions on our `Post` model:
+   ```bash
+   yarn rw prisma migrate dev
+   ```
 
-```
-yarn redwood generate scaffold post
-```
+   This will prompt you to enter a name for the migration.
 
-Navigate to [http://localhost:8910/posts/new](http://localhost:8910/posts/new), fill in the title and body, and click "Save".
+5. **Testing:**
 
-Did we just create a post in the database? Yup! With `yarn rw generate scaffold <model>`, Redwood created all the pages, components, and services necessary to perform all CRUD actions on our posts table.
+   Run tests using:
 
-## Frontend first with Storybook
+   ```bash
+   yarn rw test
+   ```
 
-Don't know what your data models look like? That's more than ok—Redwood integrates Storybook so that you can work on design without worrying about data. Mockup, build, and verify your React components, even in complete isolation from the backend:
+## Live Project
 
-```
-yarn rw storybook
-```
+The live version of this project is hosted on Vercel and can be accessed at [www.bluerosenailsandbeauty.co.nz](https://www.bluerosenailsandbeauty.co.nz).
 
-Seeing "Couldn't find any stories"? That's because you need a `*.stories.{tsx,jsx}` file. The Redwood CLI makes getting one easy enough—try generating a [Cell](https://redwoodjs.com/docs/cells), Redwood's data-fetching abstraction:
+### Deployment
 
-```
-yarn rw generate cell examplePosts
-```
+1. **Vercel Setup:**
 
-The Storybook server should hot reload and now you'll have four stories to work with. They'll probably look a little bland since there's no styling. See if the Redwood CLI's `setup ui` command has your favorite styling library:
+   The project is configured to deploy on Vercel. Ensure your Vercel account is linked to your GitHub repository for automatic deployments.
 
-```
-yarn rw setup ui --help
-```
+2. **Environment Variables:**
 
-## Testing with Jest
+   Set the necessary environment variables in the Vercel dashboard to connect to Supabase and any other services.
 
-It'd be hard to scale from side project to startup without a few tests. Redwood fully integrates Jest with both the front- and back-ends, and makes it easy to keep your whole app covered by generating test files with all your components and services:
+3. **Supabase Integration:**
 
-```
-yarn rw test
-```
+   The project uses Supabase for database operations. Ensure that your Supabase project is correctly configured and that the necessary API keys are set in Vercel.
 
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing#mocking-graphql-calls).
+## Additional Resources
 
-## Ship it
+- **Redwood CLI:**
 
-Redwood is designed for both serverless deploy targets like Netlify and Vercel and serverful deploy targets like Render and AWS:
+  For a list of all available Redwood CLI commands, run:
 
-```
-yarn rw setup deploy --help
-```
+  ```bash
+  yarn redwood --help
+  ```
 
-Don't go live without auth! Lock down your app with Redwood's built-in, database-backed authentication system ([dbAuth](https://redwoodjs.com/docs/authentication#self-hosted-auth-installation-and-setup)), or integrate with nearly a dozen third-party auth providers:
+  For detailed CLI documentation, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
 
-```
-yarn rw setup auth --help
-```
+- **Community and Support:**
 
-## Next Steps
+  Join the RedwoodJS community via the [Discourse forum](https://community.redwoodjs.com) or the [Discord server](https://discord.gg/redwoodjs).
 
-The best way to learn Redwood is by going through the comprehensive [tutorial](https://redwoodjs.com/docs/tutorial/foreword) and joining the community (via the [Discourse forum](https://community.redwoodjs.com) or the [Discord server](https://discord.gg/redwoodjs)).
+- **Tutorial:**
+
+  The best way to learn Redwood is by going through the comprehensive [tutorial](https://redwoodjs.com/docs/tutorial/foreword).
 
 ## Quick Links
 
