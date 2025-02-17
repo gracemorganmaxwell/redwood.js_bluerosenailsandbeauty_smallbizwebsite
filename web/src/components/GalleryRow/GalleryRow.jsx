@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
-import { fill } from "@cloudinary/url-gen/actions/resize"
+import { fit } from "@cloudinary/url-gen/actions/resize"
 
 import HeadingComponent from 'src/components/HeadingComponent/HeadingComponent'
 import GalleryLightbox from 'src/components/GalleryLightbox/GalleryLightbox'
@@ -194,6 +194,26 @@ const GalleryRow = () => {
       type: 'image',
       alt: 'Builder gel manicure.',
     },
+    {
+      publicId: 'Hybrid_brow_stain_and_shape_lash_lift_3_d2xqsj',
+      type: 'image',
+      alt: 'Hybrid brow stain and shape with lash lift.',
+    },
+    {
+      publicId: 'brow_shape_lbcjx3',
+      type: 'image',
+      alt: 'Brow shape.',
+    },
+    {
+      publicId: 'lash_lift_and_tint_plus_hybrid_brow_stain_and_shape_rsrfnk',
+      type: 'image',
+      alt: 'Lash lift and tint plus hybrid brow stain and shape.',
+    },
+    {
+      publicId: 'lash_lift_a_nd_tint_bhimyc',
+      type: 'image',
+      alt: 'Lash lift and tint.',
+    },
   ]
 
   const preloadMedia = (index) => {
@@ -265,19 +285,19 @@ const GalleryRow = () => {
                   {galleryMedia[currentMediaIndex].type === 'image' ? (
                     <AdvancedImage
                       cldImg={cld.image(galleryMedia[currentMediaIndex].publicId)
-                        .resize(fill().width(600).height(450))}
+                        .resize(fit().width(600).height(450))}
                       alt={galleryMedia[currentMediaIndex].alt}
-                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover
+                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-contain
                         shadow-lg transition-opacity duration-300 hover:opacity-90
                         aspect-[4/3] max-w-[600px]"
                     />
                   ) : (
                     <AdvancedVideo
                       cldVid={cld.video(galleryMedia[currentMediaIndex].publicId)
-                        .resize(fill().width(600).height(450))}
+                        .resize(fit().width(600).height(450))}
                       controls
                       muted
-                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover
+                      className="mx-auto h-auto w-full cursor-pointer rounded-lg object-contain
                         shadow-lg transition-opacity duration-300 hover:opacity-90
                         aspect-[4/3] max-w-[600px]"
                     >

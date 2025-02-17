@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react'
 import { lazyload, responsive, placeholder } from '@cloudinary/react'
 import { Cloudinary } from '@cloudinary/url-gen'
+import { fit } from '@cloudinary/url-gen/actions/resize'
 
 import HeadingComponent from '../HeadingComponent/HeadingComponent'
 import GalleryLightbox from '../GalleryLightbox/GalleryLightbox'
@@ -301,6 +302,30 @@ const galleryGridMedia = [
     alt: 'Hybrid brow stain.',
     category: 'brows',
   },
+  {
+      publicId: 'Hybrid_brow_stain_and_shape_lash_lift_3_d2xqsj',
+      type: 'image',
+      alt: 'Hybrid brow stain and shape with lash lift.',
+      category: 'brows',
+    },
+    {
+      publicId: 'brow_shape_lbcjx3',
+      type: 'image',
+      alt: 'Brow shape.',
+      category: 'brows',
+    },
+    {
+      publicId: 'lash_lift_and_tint_plus_hybrid_brow_stain_and_shape_rsrfnk',
+      type: 'image',
+      alt: 'Lash lift and tint plus hybrid brow stain and shape.',
+      category: 'brows',
+    },
+    {
+      publicId: 'lash_lift_a_nd_tint_bhimyc',
+      type: 'image',
+      alt: 'Lash lift and tint.',
+      category: 'brows',
+    },
 ]
 
 const GalleryGridComponent = () => {
@@ -416,14 +441,14 @@ const GalleryGridComponent = () => {
                       <div className="image-container relative mx-5 mt-5">
                         {media.type === 'image' ? (
                           <AdvancedImage
-                            cldImg={cld.image(media.publicId)}
+                            cldImg={cld.image(media.publicId).resize(fit().width(300).height(200))}
                             plugins={[lazyload(), responsive(), placeholder()]}
                             alt={media.alt}
                             className="h-auto w-full rounded"
                           />
                         ) : (
                           <AdvancedVideo
-                            cldVid={cld.video(media.publicId)}
+                            cldVid={cld.video(media.publicId).resize(fit().width(300).height(200))}
                             autoPlay
                             muted
                             controls
@@ -470,14 +495,14 @@ const GalleryGridComponent = () => {
                       <div className="image-container relative mx-5 mt-5">
                         {media.type === 'image' ? (
                           <AdvancedImage
-                            cldImg={cld.image(media.publicId)}
+                            cldImg={cld.image(media.publicId).resize(fit().width(300).height(200))}
                             plugins={[lazyload(), responsive(), placeholder()]}
                             alt={media.alt}
                             className="h-auto w-full rounded"
                           />
                         ) : (
                           <AdvancedVideo
-                            cldVid={cld.video(media.publicId)}
+                            cldVid={cld.video(media.publicId).resize(fit().width(300).height(200))}
                             autoPlay
                             muted
                             controls
