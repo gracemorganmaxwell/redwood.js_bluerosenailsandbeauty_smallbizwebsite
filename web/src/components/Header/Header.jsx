@@ -13,7 +13,7 @@ const NavigationComponent = () => {
           <Link to="/">
             <img
               src={logo}
-              alt="Blue Rose Nails and Beauty Business Logo and link to home page"
+              alt="Blue Rose Nails and Beauty, Christchurch, New Zealand"
               className="m-2 items-center justify-center md:ml-2"
             />
           </Link>
