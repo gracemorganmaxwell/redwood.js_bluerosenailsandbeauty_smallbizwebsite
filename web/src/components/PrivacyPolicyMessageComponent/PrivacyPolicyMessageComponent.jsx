@@ -20,7 +20,7 @@ const PrivacyPolicyMessageComponent = () => {
       <p className="mb-8">
         Your privacy is important to us. We collect personal information
         including your name and contact information, solely to schedule
-        appointments for beauty therapy services. You have the option to
+        appointments for beauty services. You have the option to
         withhold this information, but please note that it will prevent us from
         providing our services to you. You have the right to request a copy of
         the personal information we hold about you and to correct any

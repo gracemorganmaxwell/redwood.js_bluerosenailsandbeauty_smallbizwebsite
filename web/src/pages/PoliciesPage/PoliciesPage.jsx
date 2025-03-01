@@ -67,7 +67,7 @@ const PoliciesComponent = () => {
       <p className="mb-4 xs:text-center">
         Your privacy is important to us. We collect personal information
         including your name and contact information, solely to schedule
-        appointments for beauty therapy services.
+        appointments for beauty services.
       </p>
       <p className="mb-4 xs:text-center">
         You have the option to withhold this information, but please note that

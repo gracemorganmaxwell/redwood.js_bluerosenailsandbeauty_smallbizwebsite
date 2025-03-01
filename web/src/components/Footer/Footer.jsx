@@ -193,7 +193,7 @@ const Footer = () => {
         {/* Business Information */}
         <div className="mt-8 text-center">
           <h2 className="mb-4 text-xl font-bold text-white">
-            Blue Rose Nails and Beauty Therapy
+            Blue Rose Nails and Beauty
           </h2>
           <p className="mb-4 text-lg text-blueGrey">Copyright 2024</p>
           <p className="text-lg text-blueGrey">Made with 💛 by Gracie</p>
