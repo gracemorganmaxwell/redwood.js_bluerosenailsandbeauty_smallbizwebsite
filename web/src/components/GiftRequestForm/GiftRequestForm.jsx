@@ -261,49 +261,11 @@ const GiftRequestForm = () => {
         >
           <option value="">Select Delivery Method</option>
           <option value="E_Gift">E-Gift</option>
-          <option value="Physical">Physical</option>
-          <option value="BuyersPhysical">Buyer&apos;s Physical</option>
+          <option value="Pick_up">Pick-up</option>
+          <option value="Delivered">Delivered</option>
         </SelectField>
         <FieldError name="deliveryMethod" className="text-red-600 mt-1" />
       </div>
-      {deliveryMethod === 'Physical' && (
-        <div className="text-left text-darkBlue">
-          <Label
-            name="recipientAddress"
-            className="block text-lg font-medium"
-            errorClassName="text-red-600"
-          >
-            Recipient&apos;s Address:
-          </Label>
-          <TextField
-            name="recipientAddress"
-            className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-darkBlue"
-            validation={{ required: true }}
-            errorClassName="border-red-500 text-red-600"
-            autoComplete="off"
-          />
-          <FieldError name="recipientAddress" className="text-red-600 mt-1" />
-        </div>
-      )}
-      {deliveryMethod === 'BuyersPhysical' && (
-        <div className="text-left text-darkBlue">
-          <Label
-            name="gifterAddress"
-            className="block text-lg font-medium"
-            errorClassName="text-red-600"
-          >
-            Purchaser&apos;s Address:
-          </Label>
-          <TextField
-            name="gifterAddress"
-            className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-darkBlue"
-            validation={{ required: true }}
-            errorClassName="border-red-500 text-red-600"
-            autoComplete="off"
-          />
-          <FieldError name="gifterAddress" className="text-red-600 mt-1" />
-        </div>
-      )}
       {deliveryMethod === 'E_Gift' && (
         <div className="text-left text-darkBlue">
           <Label
@@ -321,6 +283,32 @@ const GiftRequestForm = () => {
             autoComplete="off"
           />
           <FieldError name="recipientEmail" className="text-red-600 mt-1" />
+        </div>
+      )}
+      {deliveryMethod === 'Delivered' && (
+        <div className="text-left text-darkBlue">
+          <Label
+            name="recipientAddress"
+            className="block text-lg font-medium"
+            errorClassName="text-red-600"
+          >
+            Delivery Address:
+          </Label>
+          <TextField
+            name="recipientAddress"
+            className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-darkBlue"
+            validation={{ required: true }}
+            errorClassName="border-red-500 text-red-600"
+            autoComplete="off"
+          />
+          <FieldError name="recipientAddress" className="text-red-600 mt-1" />
+        </div>
+      )}
+      {deliveryMethod === 'Pick_up' && (
+        <div className="text-left text-darkBlue">
+          <p className="mt-2 text-sm italic">
+            Your gift card will be available for pick-up at our location. We'll contact you when it's ready.
+          </p>
         </div>
       )}
 
