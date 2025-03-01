@@ -7,6 +7,7 @@ import clientPhoto3 from '/images/ReviewerTerri.png'
 
 import './TestimoniesRow.css'
 import TestimoniesLightbox from 'src/components/TestimoniesLightbox/TestimoniesLightbox'
+import InitialAvatar from 'src/components/InitialAvatar/InitialAvatar'
 
 const TestimoniesRow = () => {
   const [currentTestimonyIndex, setCurrentTestimonyIndex] = useState(0)
@@ -31,6 +32,36 @@ const TestimoniesRow = () => {
         '"Anna is incredible at what she does... my eyebrows and lashes have never looked as amazing as they have after she was done with them. She is so talented at what she does and so kind as well. Highly recommend"',
       clientName: 'Terri Carlson',
       clientPhoto: clientPhoto3,
+    },
+    {
+      quote:
+        '"Had the most stunning lash lift and brow stain! Couldn\u2019t recommend Anna enough, explained the steps as she was doing them and left feeling so pretty! Thanks so much again! X"',
+      clientName: 'Joy M',
+      clientPhoto: null,
+    },
+    {
+      quote:
+        '"Anna was absolutely amazing! Very thorough and talked me through each step. She was also kind and I felt instantly at ease. Will definitely be back"',
+      clientName: 'Gen M',
+      clientPhoto: null,
+    },
+    {
+      quote:
+        '"Recommended by my friend, it Was lovely to meet Anna and treated by her! Tried getting brazilian wax with her for the first time and was pleasantly surprised that it was way less painful than I anticipated, she knows her stuff and care for her client! Love the chats and her aspirations. Now I recommend her too!"',
+      clientName: 'Ratu R',
+      clientPhoto: null,
+    },
+    {
+      quote:
+        '"Fantastic friendly service. Anna\u2019s skills and expertise are excellent. Thoroughly enjoy and look forward to my appointments and always leave feeling and look fabulous 😊"',
+      clientName: 'Lynda M',
+      clientPhoto: null,
+    },
+    {
+      quote:
+        '"Anna did such an amazing job and was so lovely and friendly! Will definitely be going back!"',
+      clientName: 'Ruth J',
+      clientPhoto: null,
     },
   ]
 
@@ -117,11 +148,18 @@ const TestimoniesRow = () => {
                   </div>
                 </div>
                 <div className="testimony-client">
-                  <img
-                    src={testimonies[currentTestimonyIndex].clientPhoto}
-                    alt={testimonies[currentTestimonyIndex].clientName}
-                    className="client-photo"
-                  />
+                  {testimonies[currentTestimonyIndex].clientPhoto ? (
+                    <img
+                      src={testimonies[currentTestimonyIndex].clientPhoto}
+                      alt={testimonies[currentTestimonyIndex].clientName}
+                      className="client-photo"
+                    />
+                  ) : (
+                    <InitialAvatar
+                      name={testimonies[currentTestimonyIndex].clientName}
+                      className="client-photo"
+                    />
+                  )}
                   <p className="client-name">
                     {testimonies[currentTestimonyIndex].clientName}
                   </p>

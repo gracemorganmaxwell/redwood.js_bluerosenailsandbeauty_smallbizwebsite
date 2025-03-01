@@ -12,15 +12,6 @@ import TestimoniesRow from 'src/components/TestimoniesRow/TestimoniesRow'
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false)
 
-  // useEffect(() => {
-  //   // Simulating a loading delay for demonstration
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 2000)
-
-  //   return () => clearTimeout(timer) // Cleanup the timer
-  // }, [])
-
   return (
     <div>
       {isLoading ? (

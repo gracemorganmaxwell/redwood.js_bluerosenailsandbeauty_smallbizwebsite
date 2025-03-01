@@ -1,4 +1,5 @@
 import React from 'react';
+import InitialAvatar from 'src/components/InitialAvatar/InitialAvatar'
 
 const TestimoniesLightbox = ({
   testimonies,
@@ -38,12 +39,19 @@ const TestimoniesLightbox = ({
                 {currentTestimony.quote}
               </p>
               <div className="flex items-center justify-center space-x-4 mb-6">
-                <img
-                  src={currentTestimony.clientPhoto}
-                  alt={currentTestimony.clientName}
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
-                  loading="lazy"
-                />
+                {currentTestimony.clientPhoto ? (
+                  <img
+                    src={currentTestimony.clientPhoto}
+                    alt={currentTestimony.clientName}
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <InitialAvatar
+                    name={currentTestimony.clientName}
+                    className="w-12 h-12 sm:w-16 sm:h-16"
+                  />
+                )}
                 <p className="text-base sm:text-lg font-medium">- {currentTestimony.clientName}</p>
               </div>
             </div>
