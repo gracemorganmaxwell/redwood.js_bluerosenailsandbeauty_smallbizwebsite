@@ -1,6 +1,16 @@
-# Blue Rose Nails and Beauty
+## Blue Rose Nails and Beauty – Project Overview
 
-Welcome to the Blue Rose Nails and Beauty project, built with [RedwoodJS](https://redwoodjs.com) and hosted on Vercel. This project uses Supabase for its database needs.
+Blue Rose Nails and Beauty is a modern, full-stack web project built with RedwoodJS—a React-based framework that leverages GraphQL for efficient data handling.
+
+Tech Stack & Features
+
+🚀 Framework: RedwoodJS (React + GraphQL)
+📡 Hosting: Vercel for seamless deployment
+🗄️ Database: Supabase (Postgres) for handling form submissions
+🖼️ Media Management: Cloudinary for optimized image delivery
+🎨 Styling: Tailwind CSS for a responsive, sleek UI
+
+This project was developed with performance, scalability, and ease of management in mind, ensuring a smooth experience for both the business owner and clients.
 
 ## Prerequisites
 
