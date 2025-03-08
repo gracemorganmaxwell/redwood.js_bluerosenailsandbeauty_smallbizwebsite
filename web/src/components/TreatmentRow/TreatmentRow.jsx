@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Brows from '/images/Brows.png'
-import Consult from '/images/Consult.png'
+import Facial from '/images/Facial.png'
 import FootTreatment from '/images/FootTreatment.png'
 import headingAssent from '/images/headingAssent.svg'
 import NailsLashesPackages from '/images/Lash&BrowPackages.png'
@@ -35,9 +35,9 @@ const TreatmentRow = () => {
       href: '/massage-fresha-link',
     },
     {
-      image: Consult,
-      label: 'Free Consultations',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16355515&pId=969545',
+      image: Facial,
+      label: 'Face Treatments',
+      href: '/facial-fresha-link',
     },
     {
       image: FootTreatment,
