@@ -5,23 +5,23 @@ import HeadingComponent from '../HeadingComponent/HeadingComponent'
 const BrowsTreatmentComponent = () => {
   const treatments = [
     {
-      label: 'Eyebrow shape',
+      label: 'Eyebrow Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13774620&pId=969545',
     },
     {
-      label: 'Eyebrow tint',
+      label: 'Eyebrow Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884967&pId=969545',
     },
     {
-      label: 'Eyebrow shape & tint',
+      label: 'Eyebrow Shape & Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13775539&pId=969545',
     },
     {
-      label: 'Hybrid stain',
+      label: 'Hybrid Stain',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885011&pId=969545',
     },
     {
-      label: 'Hybrid stain and shape',
+      label: 'Hybrid Stain & Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885015&pId=969545',
     },
     {
@@ -29,7 +29,7 @@ const BrowsTreatmentComponent = () => {
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13863281&pId=969545',
     },
     {
-      label: 'Brow lamination with hybrid stain',
+      label: 'Brow Lamination with Hybrid Stain',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885095&pId=969545',
     },
   ]
