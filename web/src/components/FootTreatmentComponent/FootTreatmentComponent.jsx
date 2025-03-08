@@ -5,31 +5,19 @@ import { Metadata } from '@redwoodjs/web'
 const FootTreatmentComponent = () => {
   const treatments = [
     {
-      label: 'Deluxe pedicure',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A15138494&pId=969545',
-    },
-    {
-      label: 'Deluxe gel pedicure',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13801005&pId=969545',
-    },
-    {
-      label: 'Deluxe gel pedicure removal & reapplication',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884494&pId=969545',
-    },
-    {
-      label: 'Gel pedicure',
+      label: 'Gel Pedicure',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13801129&pId=969545',
     },
     {
-      label: 'Gel pedicure removal & reapplication',
+      label: 'Gel Pedicure Removal & Reapplication',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884430&pId=969545',
     },
     {
-      label: 'Gel removal & nail tidy',
+      label: 'Gel Removal & Nail Tidy',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884522&pId=969545',
     },
     {
-      label: 'Foot bliss',
+      label: 'Foot Bliss',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884586&pId=969545',
     },
   ]
