@@ -50,7 +50,7 @@ const BodyWaxingTreatmentComponent = () => {
     <div className="bg-darkBlue py-16 sm:py-24 md:py-32">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-4xl rounded-[12px] bg-white p-8 sm:p-12 md:p-16 lg:mx-auto lg:max-w-[1366px]">
-          <HeadingComponent title="Body Waxing Treatments" />
+          <HeadingComponent title="Hair Removal" />
           {/* Subheading */}
           <h2 className="mb-8 text-center text-2xl font-semibold text-darkBlue">
             Please click to find out more

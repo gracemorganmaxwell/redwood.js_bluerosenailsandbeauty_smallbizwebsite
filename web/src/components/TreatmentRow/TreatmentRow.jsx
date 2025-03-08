@@ -26,7 +26,7 @@ const TreatmentRow = () => {
     },
     {
       image: Waxing,
-      label: 'Waxing',
+      label: 'Hair Removal',
       href: '/bodywaxing-fresha-link',
     },
     {
@@ -46,7 +46,7 @@ const TreatmentRow = () => {
     },
     {
       image: UnisexWaxing,
-      label: 'Unisex Waxing',
+      label: 'Unisex Hair Removal',
       href: '/unisex-waxing-fresha-link',
     },
     {
