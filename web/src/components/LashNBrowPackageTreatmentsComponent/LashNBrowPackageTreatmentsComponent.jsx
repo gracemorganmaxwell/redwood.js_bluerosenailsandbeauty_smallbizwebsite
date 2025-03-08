@@ -5,43 +5,43 @@ import { Metadata } from '@redwoodjs/web'
 const LashNBrowPackageTreatmentsComponent = () => {
   const treatments = [
     {
-      label: 'Lash lift & tint and brow lamination combo',
+      label: 'Lash Lift & Tint and Brow Lamination Combo',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A16826794&pId=969545',
     },
     {
-      label: 'Eyelash tint',
+      label: 'Eyelash Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885165&pId=969545',
     },
     {
-      label: 'Eyelash tint & Eyebrow tint',
+      label: 'Eyelash Tint & Eyebrow Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885193&pId=969545',
     },
     {
-      label: 'Eyelash tint & Eyebrow shape',
+      label: 'Eyelash Tint & Eyebrow Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885194&pId=969545',
     },
     {
-      label: 'Eyelash tint, brow tint & shape',
+      label: 'Eyelash Tint, Brow Tint & Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885189&pId=969545',
     },
     {
-      label: 'Lash Lift & tint',
+      label: 'Lash Lift & Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885230&pId=969545',
     },
     {
-      label: 'Lash lift & tint and eyebrow tint',
+      label: 'Lash Lift & Tint and Eyebrow Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885246&pId=969545',
     },
     {
-      label: 'Lash lift & tint and eyebrow shape',
+      label: 'Lash Lift & Tint and Eyebrow Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885251&pId=969545',
     },
     {
-      label: 'Lash lift & tint and eyebrow shape with tint',
+      label: 'Lash Lift & Tint and Eyebrow Shape with Tint',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885279&pId=969545',
     },
     {
-      label: 'Lash lift & tint and Hybrid stain & shape',
+      label: 'Lash Lift & Tint and Hybrid Stain & Shape',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A14194299&pId=969545',
     },
   ]
