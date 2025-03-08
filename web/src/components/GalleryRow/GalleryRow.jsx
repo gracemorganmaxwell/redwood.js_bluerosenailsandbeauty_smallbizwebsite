@@ -307,8 +307,8 @@ const GalleryRow = () => {
                   )}
                 </div>
               </div>
-              <div className="mt-2 text-center font-gfs_didot_regular text-darkBlue sm:text-lg md:text-xl lg:text-2xl">
-                {currentMediaIndex + 1}/{galleryMedia.length}
+              <div className="sr-only" aria-live="polite">
+                {currentMediaIndex + 1} of {galleryMedia.length}
               </div>
               <div className="mt-4 text-center md:hidden">
                 <button

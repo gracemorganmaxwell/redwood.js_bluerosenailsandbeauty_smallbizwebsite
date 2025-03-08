@@ -438,7 +438,7 @@ const GalleryGridComponent = () => {
                       className="card box-border inline-block transform rounded border border-darkBlue bg-white text-center font-sans font-semibold shadow-2xl transition-transform hover:scale-105 hover:cursor-pointer"
                       aria-label={`Open ${media.alt}`}
                     >
-                      <div className="image-container relative mx-5 mt-5">
+                      <div className="image-container relative mx-5 my-5">
                         {media.type === 'image' ? (
                           <AdvancedImage
                             cldImg={cld.image(media.publicId).resize(fit().width(300).height(200))}
@@ -456,9 +456,6 @@ const GalleryGridComponent = () => {
                             className="h-auto w-full rounded"
                           />
                         )}
-                      </div>
-                      <div className="label rounded-b bg-white px-2 py-4 transition-all hover:text-lg">
-                        {media.alt}
                       </div>
                     </div>
                   ))}
@@ -492,7 +489,7 @@ const GalleryGridComponent = () => {
                       className="card box-border inline-block transform rounded border border-darkBlue bg-white text-center font-sans font-semibold shadow-2xl transition-transform hover:scale-105 hover:cursor-pointer"
                       aria-label={`Open ${media.alt}`}
                     >
-                      <div className="image-container relative mx-5 mt-5">
+                      <div className="image-container relative mx-5 my-5">
                         {media.type === 'image' ? (
                           <AdvancedImage
                             cldImg={cld.image(media.publicId).resize(fit().width(300).height(200))}
@@ -510,9 +507,6 @@ const GalleryGridComponent = () => {
                             className="h-auto w-full rounded"
                           />
                         )}
-                      </div>
-                      <div className="label rounded-b bg-white px-2 py-4 transition-all hover:text-lg">
-                        {media.alt}
                       </div>
                     </div>
                   ))}
