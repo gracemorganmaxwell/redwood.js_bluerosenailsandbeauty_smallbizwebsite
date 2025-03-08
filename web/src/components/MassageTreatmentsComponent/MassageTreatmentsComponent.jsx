@@ -5,31 +5,31 @@ import { Metadata } from '@redwoodjs/web'
 const MassageTreatmentsComponent = () => {
   const treatments = [
     {
-      label: 'Scalp massage add-on',
+      label: 'Scalp Massage Add-on',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A17169130&pId=969545',
     },
     {
-      label: 'Back, neck and Shoulder - 30 minutes',
+      label: 'Back, Neck and Shoulder - 30 Minutes',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13774618&pId=969545',
     },
     {
-      label: 'Relaxation massage - 60 minutes',
+      label: 'Relaxation Massage - 60 Minutes',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13774619&pId=969545',
     },
     {
-      label: 'Clients choice 30 minute',
-      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13774619&pId=969545',
+      label: 'Clients Choice - 30 Minutes',
+      href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885340&pId=969545',
     },
     {
-      label: 'Clients choice 45 minute',
+      label: 'Clients Choice - 45 Minutes',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13885337&pId=969545',
     },
     {
-      label: 'Clients choice 1 hour',
+      label: 'Clients Choice - 60 Minutes',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A13884924&pId=969545',
     },
     {
-      label: 'Face & scalp massage',
+      label: 'Face & Scalp Massage',
       href: 'https://www.fresha.com/book-now/blue-rose-nails-beauty-h5gamcsb/services?lid=1023059&eid=2472017&oiid=sv%3A15070296&pId=969545',
     },
   ]
