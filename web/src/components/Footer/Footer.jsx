@@ -129,18 +129,53 @@ const Footer = () => {
           {/* Location Section */}
           <div className="text-center lg:text-left">
             <h3 className="mb-2 text-lg font-bold text-blueGrey">Location</h3>
-            <p className="text-lg text-blueGrey">Avro Crescent, Wigram</p>
+            <p className="text-lg text-blueGrey">26 Avro Crescent, Wigram</p>
             <p className="text-lg text-blueGrey">Christchurch, New Zealand</p>
             <p className="mt-2 text-lg text-greyViolet">By appointment only.</p>
             <div className="mb-4 mt-4 lg:mb-0">
+              {/*
+              // To implement a custom Google Map with a dark blue marker pin,
+              // replace the iframe with a div and add this script to your HTML head:
+              //
+              // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+              //
+              // Then use this component code:
+
+              <div
+                id="map"
+                className="rounded-md border border-white bg-transparent shadow-lg transition duration-200 hover:shadow-xl"
+                style={{width: '100%', height: '250px'}}
+                ref={el => {
+                  if (el && !el.querySelector('iframe')) {
+                    const map = new window.google.maps.Map(el, {
+                      center: { lat: -43.5465009, lng: 172.538989 },
+                      zoom: 15,
+                    });
+
+                    new window.google.maps.marker.AdvancedMarkerElement({
+                      map,
+                      position: { lat: -43.5465009, lng: 172.538989 },
+                      title: "Blue Rose Nails & Beauty",
+                      content: new window.google.maps.marker.PinElement({
+                        background: "#00008B", // darkBlue color
+                        glyphColor: "white",
+                      }).element,
+                    });
+                  }
+                }}
+              />
+              */}
+
+              {/* Current iframe embed - keep this until you're ready to implement the JavaScript API version */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.0444828045515!2d172.56464641627924!3d-43.55956327912443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318bd35757c7df%3A0x5018b6cb01797b0!2sAvro%20Crescent%2C%20Wigram%2C%20Christchurch%2C%20New%20Zealand!5e0!3m2!1sen!2sus!4v1620150118912!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6986831133126!2d172.5364043!3d-43.54650082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6186915d2ffc3f8d%3A0xcd1d811284c32c19!2sBlue%20Rose%20Nails%20%26%20Beauty!5e0!3m2!1sen!2snz!4v1709679284046!5m2!1sen!2snz"
                 width="100%"
-                height="200"
+                height="250"
                 allowFullScreen=""
                 loading="lazy"
-                title="Google Map"
-                className="rounded-md border-0"
+                title="Blue Rose Nails & Beauty Location"
+                className="rounded-md border border-white bg-transparent shadow-lg transition duration-200 hover:shadow-xl"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
