@@ -53,9 +53,8 @@ const Footer = () => {
         variables: { input: { name, email, recaptchaValue: token } },
       })
 
-      toast.success('👌 Thank you for subscribing! 😁 Your email has been added to our list.💙')
-      setName('')
-      setEmail('')
+      // Success toast is already handled in onCompleted callback
+      // No need to show a duplicate success message here
     } catch (error) {
       console.error(error)
       toast.error('Oops! Something went wrong. Please try again.')

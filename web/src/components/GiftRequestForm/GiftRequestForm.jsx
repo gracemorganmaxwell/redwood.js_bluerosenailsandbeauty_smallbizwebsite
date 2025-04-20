@@ -68,7 +68,7 @@ const GiftRequestForm = () => {
         },
       })
 
-      toast.success('👌 Thank you for your gift card request! 😁 We will be in touch soon.💙')
+      // Success toast is already handled in onCompleted callback
       reset()
     } catch (error) {
       console.error(error)

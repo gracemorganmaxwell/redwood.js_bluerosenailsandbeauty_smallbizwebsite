@@ -56,7 +56,6 @@ const ContactFormComponent = () => {
         },
       })
 
-      toast.success('👌 Thank you for your message! 😁 We will be in touch soon.💙')
       reset()
     } catch (error) {
       console.error(error)
